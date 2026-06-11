@@ -13,6 +13,7 @@ records — no human or LLM writes any of the prose.
 
 | Date (UTC) | Opponent | Result | Game | Report |
 |---|---|---|---|---|
+| 2026-06-11 20:23 | eraoul | 1–0 | [lichess](https://lichess.org/imTGIp02) | [thought report (PDF)](games/2026-06-11_vs_eraoul_imTGIp02/report.pdf) |
 | 2026-06-11 19:54 | alex-linhares | 1–0 | [lichess](https://lichess.org/BCsz4MpS) | [thought report (PDF)](games/2026-06-11_vs_alex-linhares_BCsz4MpS/report.pdf) |
 
 _Games are unranked; player ratings are omitted from the reports and this index._
