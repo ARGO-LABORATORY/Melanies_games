@@ -12,12 +12,12 @@ showing every move's source game + role correspondence, and the reproducible `th
 
 ## Score (run `masters_vs_bots_overnight_20260611_232406`)
 
-**MASTERS 0 — 1 BOTS**  (draws: 0, games: 1)
+**MASTERS 0 — 2 BOTS**  (draws: 0, games: 2)
 
 | | |
 |---|---|
 | MASTERS (human corpus) wins | 0 |
-| BOTS (engine corpus) wins | 1 |
+| BOTS (engine corpus) wins | 2 |
 | Draws | 0 |
 
 Games adjudicated naturally (mate / 50-move / threefold / insufficient); ply-capped games are refereed
@@ -28,3 +28,4 @@ by Stockfish (referee only — never in either engine's move choice).
 | # | White | Black | Result | Winner | Plies | Game |
 |---|---|---|---|---|---|---|
 | 1 | MASTERS | BOTS | 0-1 | BOTS | 192 | [g01](game_01/) |
+| 2 | BOTS | MASTERS | 1-0 | BOTS | 103 | [g02](game_02/) |
