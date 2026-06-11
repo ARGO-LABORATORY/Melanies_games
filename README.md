@@ -13,7 +13,9 @@ records — no human or LLM writes any of the prose.
 
 | Date (UTC) | Opponent | Result | Game | Report |
 |---|---|---|---|---|
-| 2026-06-11 19:54 | alex-linhares (1500) | 1–0 | [lichess](https://lichess.org/BCsz4MpS) | [thought report (PDF)](games/2026-06-11_vs_alex-linhares_BCsz4MpS/report.pdf) |
+| 2026-06-11 19:54 | alex-linhares | 1–0 | [lichess](https://lichess.org/BCsz4MpS) | [thought report (PDF)](games/2026-06-11_vs_alex-linhares_BCsz4MpS/report.pdf) |
+
+_Games are unranked; player ratings are omitted from the reports and this index._
 
 Each game folder contains the `game.pgn`, the `report.pdf`, and the `thoughts/` source
 (per-move JSON records + the generated `report.tex`) so every report is fully reproducible.
