@@ -20,3 +20,7 @@ _Games are unranked; player ratings are omitted from the reports and this index.
 
 Each game folder contains the `game.pgn`, the `report.pdf`, and the `thoughts/` source
 (per-move JSON records + the generated `report.tex`) so every report is fully reproducible.
+
+## Experiments
+
+- [2026-06-11_masters_vs_bots](experiments/2026-06-11_masters_vs_bots/) — Same analogy engine, two different "minds": one allowed to reason **only from human master games**, the other **only from top-engine (CCRL) games** — played head to head.
