@@ -7,7 +7,7 @@ Engine speed lever: `R_QAP=16` on both sides (fair); analogy takes over right af
 
 ## Score (run `masters_vs_bots_book_20260612_024941`)
 
-**MASTERS 9 — 11 BOTS**  (draws: 3, games: 23)
+**MASTERS 9 — 12 BOTS**  (draws: 3, games: 24)
 
 Each game folder has `game.pgn` + both per-side report PDFs + reproducible `thoughts/`. A Stockfish
 "move-quality verdict" (per-side ACPL) is appended after the match (referee only).
@@ -27,4 +27,4 @@ Each game folder has `game.pgn` + both per-side report PDFs + reproducible `thou
 | Grunfeld | 0-1 (BOTS) | 0-1 (MASTERS) | +32 |
 | King's Indian, Classical | 1-0 (MASTERS) | 1-0 (BOTS) | +61 |
 | London System | 0-1 (BOTS) | 0-1 (MASTERS) | +8 |
-| Nimzo-Indian | 1/2-1/2 (draw) | — | +25 |
+| Nimzo-Indian | 1/2-1/2 (draw) | 1-0 (BOTS) | +25 |
