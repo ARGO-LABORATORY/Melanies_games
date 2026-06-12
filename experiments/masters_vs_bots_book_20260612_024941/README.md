@@ -7,7 +7,7 @@ Engine speed lever: `R_QAP=16` on both sides (fair); analogy takes over right af
 
 ## Score (run `masters_vs_bots_book_20260612_024941`)
 
-**MASTERS 11 — 16 BOTS**  (draws: 4, games: 31)
+**MASTERS 12 — 16 BOTS**  (draws: 4, games: 32)
 
 Each game folder has `game.pgn` + both per-side report PDFs + reproducible `thoughts/`. A Stockfish
 "move-quality verdict" (per-side ACPL) is appended after the match (referee only).
@@ -31,4 +31,4 @@ Each game folder has `game.pgn` + both per-side report PDFs + reproducible `thou
 | QGD, Exchange | 0-1 (BOTS) | 1-0 (BOTS) | +36 |
 | Queen's Gambit Accepted | 1/2-1/2 (draw) | 1-0 (BOTS) | +32 |
 | Reti Opening | 0-1 (BOTS) | 0-1 (MASTERS) | +27 |
-| Ruy Lopez, Closed | 1-0 (MASTERS) | — | +38 |
+| Ruy Lopez, Closed | 1-0 (MASTERS) | 0-1 (MASTERS) | +38 |
