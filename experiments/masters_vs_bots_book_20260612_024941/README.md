@@ -7,7 +7,7 @@ Engine speed lever: `R_QAP=16` on both sides (fair); analogy takes over right af
 
 ## Score (run `masters_vs_bots_book_20260612_024941`)
 
-**MASTERS 4 — 7 BOTS**  (draws: 2, games: 13)
+**MASTERS 4 — 8 BOTS**  (draws: 2, games: 14)
 
 Each game folder has `game.pgn` + both per-side report PDFs + reproducible `thoughts/`. A Stockfish
 "move-quality verdict" (per-side ACPL) is appended after the match (referee only).
@@ -22,4 +22,4 @@ Each game folder has `game.pgn` + both per-side report PDFs + reproducible `thou
 | Catalan | 0-1 (BOTS) | 1-0 (BOTS) | +32 |
 | Dutch, Stonewall | 0-1 (BOTS) | 1-0 (BOTS) | +53 |
 | English, Symmetrical | 1-0 (MASTERS) | 1/2-1/2 (draw) | +40 |
-| French, Classical | 0-1 (BOTS) | — | +38 |
+| French, Classical | 0-1 (BOTS) | 1-0 (BOTS) | +38 |
