@@ -7,7 +7,7 @@ Engine speed lever: `R_QAP=16` on both sides (fair); analogy takes over right af
 
 ## Score (run `masters_vs_bots_book_20260612_024941`)
 
-**MASTERS 2 — 2 BOTS**  (draws: 1, games: 5)
+**MASTERS 3 — 2 BOTS**  (draws: 1, games: 6)
 
 Each game folder has `game.pgn` + both per-side report PDFs + reproducible `thoughts/`. A Stockfish
 "move-quality verdict" (per-side ACPL) is appended after the match (referee only).
@@ -18,4 +18,4 @@ Each game folder has `game.pgn` + both per-side report PDFs + reproducible `thou
 |---|---|---|---|
 | Alekhine Defense | 1-0 (MASTERS) | 0-1 (MASTERS) | +87 |
 | Bogo-Indian | 0-1 (BOTS) | 1-0 (BOTS) | +52 |
-| Caro-Kann, Panov | 1/2-1/2 (draw) | — | +37 |
+| Caro-Kann, Panov | 1/2-1/2 (draw) | 0-1 (MASTERS) | +37 |
