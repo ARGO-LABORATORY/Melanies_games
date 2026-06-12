@@ -7,7 +7,7 @@ Engine speed lever: `R_QAP=16` on both sides (fair); analogy takes over right af
 
 ## Score (run `masters_vs_bots_book_20260612_024941`)
 
-**MASTERS 13 — 20 BOTS**  (draws: 6, games: 39)
+**MASTERS 13 — 21 BOTS**  (draws: 6, games: 40)
 
 Each game folder has `game.pgn` + both per-side report PDFs + reproducible `thoughts/`. A Stockfish
 "move-quality verdict" (per-side ACPL) is appended after the match (referee only).
@@ -35,4 +35,4 @@ Each game folder has `game.pgn` + both per-side report PDFs + reproducible `thou
 | Scotch Game | 1-0 (MASTERS) | 1/2-1/2 (draw) | +0 |
 | Semi-Slav | 0-1 (BOTS) | 1-0 (BOTS) | +31 |
 | Sicilian, Alapin | 1/2-1/2 (draw) | 1-0 (BOTS) | +26 |
-| Sicilian, Dragon | 0-1 (BOTS) | — | +61 |
+| Sicilian, Dragon | 0-1 (BOTS) | 1-0 (BOTS) | +61 |
