@@ -13,6 +13,7 @@ records — no human or LLM writes any of the prose.
 
 | Date (UTC) | Opponent | Result | Game | Report |
 |---|---|---|---|---|
+| 2026-06-12 12:20 | alex-linhares | 0–1 | [lichess](https://lichess.org/Hg3NkHUB) | [thought report (PDF)](games/2026-06-12_vs_alex-linhares_Hg3NkHUB/report.pdf) |
 | 2026-06-11 20:23 | eraoul | 1–0 | [lichess](https://lichess.org/imTGIp02) | [thought report (PDF)](games/2026-06-11_vs_eraoul_imTGIp02/report.pdf) |
 | 2026-06-11 19:54 | alex-linhares | 1–0 | [lichess](https://lichess.org/BCsz4MpS) | [thought report (PDF)](games/2026-06-11_vs_alex-linhares_BCsz4MpS/report.pdf) |
 
@@ -23,4 +24,6 @@ Each game folder contains the `game.pgn`, the `report.pdf`, and the `thoughts/` 
 
 ## Experiments
 
+- [masters_vs_bots_overnight_20260611_232406](experiments/masters_vs_bots_overnight_20260611_232406/) — Same analogy engine, two corpora, played head-to-head over many full games (colors alternate each game).
+- [masters_vs_bots_book_20260612_024941](experiments/masters_vs_bots_book_20260612_024941/) — Same analogy engine, two corpora (MASTERS=human games, BOTS=CCRL engine games), played head-to-head
 - [2026-06-11_masters_vs_bots](experiments/2026-06-11_masters_vs_bots/) — Same analogy engine, two different "minds": one allowed to reason **only from human master games**, the other **only from top-engine (CCRL) games** — played head to head.
