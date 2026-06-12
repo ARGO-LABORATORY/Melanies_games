@@ -7,7 +7,7 @@ Engine speed lever: `R_QAP=16` on both sides (fair); analogy takes over right af
 
 ## Score (run `masters_vs_bots_book_20260612_024941`)
 
-**MASTERS 9 — 16 BOTS**  (draws: 4, games: 29)
+**MASTERS 10 — 16 BOTS**  (draws: 4, games: 30)
 
 Each game folder has `game.pgn` + both per-side report PDFs + reproducible `thoughts/`. A Stockfish
 "move-quality verdict" (per-side ACPL) is appended after the match (referee only).
@@ -30,4 +30,4 @@ Each game folder has `game.pgn` + both per-side report PDFs + reproducible `thou
 | Nimzo-Indian | 1/2-1/2 (draw) | 1-0 (BOTS) | +25 |
 | QGD, Exchange | 0-1 (BOTS) | 1-0 (BOTS) | +36 |
 | Queen's Gambit Accepted | 1/2-1/2 (draw) | 1-0 (BOTS) | +32 |
-| Reti Opening | 0-1 (BOTS) | — | +27 |
+| Reti Opening | 0-1 (BOTS) | 0-1 (MASTERS) | +27 |
