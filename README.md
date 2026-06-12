@@ -13,6 +13,7 @@ records — no human or LLM writes any of the prose.
 
 | Date (UTC) | Opponent | Result | Game | Report |
 |---|---|---|---|---|
+| 2026-06-12 15:42 | alex-linhares | 0–1 | [lichess](https://lichess.org/qUimCtwZ) | [thought report (PDF)](games/2026-06-12_vs_alex-linhares_qUimCtwZ/report.pdf) |
 | 2026-06-12 12:20 | alex-linhares | 0–1 | [lichess](https://lichess.org/Hg3NkHUB) | [thought report (PDF)](games/2026-06-12_vs_alex-linhares_Hg3NkHUB/report.pdf) |
 | 2026-06-11 20:23 | eraoul | 1–0 | [lichess](https://lichess.org/imTGIp02) | [thought report (PDF)](games/2026-06-11_vs_eraoul_imTGIp02/report.pdf) |
 | 2026-06-11 19:54 | alex-linhares | 1–0 | [lichess](https://lichess.org/BCsz4MpS) | [thought report (PDF)](games/2026-06-11_vs_alex-linhares_BCsz4MpS/report.pdf) |
