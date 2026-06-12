@@ -7,7 +7,7 @@ Engine speed lever: `R_QAP=16` on both sides (fair); analogy takes over right af
 
 ## Score (run `masters_vs_bots_book_20260612_024941`)
 
-**MASTERS 8 — 11 BOTS**  (draws: 2, games: 21)
+**MASTERS 9 — 11 BOTS**  (draws: 2, games: 22)
 
 Each game folder has `game.pgn` + both per-side report PDFs + reproducible `thoughts/`. A Stockfish
 "move-quality verdict" (per-side ACPL) is appended after the match (referee only).
@@ -26,4 +26,4 @@ Each game folder has `game.pgn` + both per-side report PDFs + reproducible `thou
 | French, Tarrasch | 1-0 (MASTERS) | 0-1 (MASTERS) | +46 |
 | Grunfeld | 0-1 (BOTS) | 0-1 (MASTERS) | +32 |
 | King's Indian, Classical | 1-0 (MASTERS) | 1-0 (BOTS) | +61 |
-| London System | 0-1 (BOTS) | — | +8 |
+| London System | 0-1 (BOTS) | 0-1 (MASTERS) | +8 |
