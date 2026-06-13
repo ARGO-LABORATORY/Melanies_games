@@ -1,0 +1,2745 @@
+\documentclass[11pt]{article}
+\input{/home/al/dev/Deep_Vision/chess/engine/move_translation_study/shared/preamble.tex}
+\title{Melanie-XRAY — Alekhine Defense}
+\author{Melanie (Deep\_Vision)}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}Every move below was produced by relational analogy to named master games (human and/or top-engine -- the exact source is named per move). Each figure shows our position with Melanie's move (a) and the top retrieved analog positions (b--d) with the master move played there; the caption names the exact source and the piece-role correspondence under $\mu$ -- cross-type maps (a rook playing a queen's role) are called out, as no material/eval engine explains a move that way.\end{abstract}
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={rnbqk2r/ppp1ppbp/1n1p2p1/4P3/3P4/1B3N2/PPP2PPP/RNBQK1R1 b Qkq - 5 7},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b8-c6}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={rnbqk2r/pp3ppp/1b3n2/3p4/4p3/1N1P2P1/PP2PPBP/RNBQK2R w KQkq - 3 9},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b1-c3}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={rnbqk2r/pp3ppp/1b3n2/3p4/4p3/1N1P2P1/PP2PPBP/RNBQK2R w KQkq - 3 9},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b1-c3}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r1bqk1nr/ppp2pbp/2np2p1/4p3/4PP2/2NPBN2/PPP3PP/R2QKB1R b KQkq - 5 6},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g8-f6}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 7, Black: \texttt{Nc6}.} (a) Our position; Melanie plays \texttt{Nc6} (\texttt{b8c6}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0000\#1197} (ply 16) [structural distance $d$=35, QAP obj=108]: the master played \texttt{Nc3}; under $\mu$ our \emph{Nb1} plays the role of that game's \emph{Nb1}; transferred move \texttt{b8c6} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0000\#2838} (ply 16) [structural distance $d$=35, QAP obj=108]: the master played \texttt{Nc3}; under $\mu$ our \emph{Nb1} plays the role of that game's \emph{Nb1}; transferred move \texttt{b8c6} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0001\#3913} (ply 11) [structural distance $d$=45, QAP obj=66]: the master played \texttt{Nf6}; under $\mu$ our \emph{Nb1} plays the role of that game's \emph{Ng1}; cross-type roles: our \emph{p}d4 as their \emph{R}a8, our \emph{p}g2 as their \emph{B}c8; transferred move \texttt{b8c6} \textbf{(endorses this move)}. Synthesis: 4 retrieved analogs transferred to \texttt{Nc6} (summed QAP objective 347, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m13}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r1bqk2r/ppp1ppbp/1nnp2p1/4P3/3P4/1B3N2/PPP1KPPP/RNBQ2R1 b kq - 7 8},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d6-e5}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={rnbq1rk1/pp3ppp/1b3n2/3p4/4p3/1NNP2P1/PP2PPBP/R1BQK2R w KQ - 5 10},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d3-e4}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r1bqkb1r/1p2pppp/p1np1n2/2p5/P2PP3/2N2N1P/1PP2PP1/R1BQKB1R b KQkq - 0 6},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c5-d4}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r1bqkb1r/1p2pppp/p1np1n2/2p5/P2PP3/2N2N1P/1PP2PP1/R1BQKB1R b KQkq - 0 6},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c5-d4}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 8, Black: \texttt{dxe5}.} (a) Our position; Melanie plays \texttt{dxe5} (\texttt{d6e5}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0000\#2838} (ply 18) [structural distance $d$=28, QAP obj=169]: the master played \texttt{dxe4}; under $\mu$ our \emph{Pd3} plays the role of that game's \emph{Pd3}; cross-type roles: our \emph{p}c2 as their \emph{R}a1, our \emph{r}g1 as their \emph{p}f7; transferred move \texttt{d6e5} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0001\#2207} (ply 11) [structural distance $d$=57, QAP obj=92]: the master played \texttt{cxd4}; under $\mu$ our \emph{Pd3} plays the role of that game's \emph{Pc4}; cross-type roles: our \emph{p}c2 as their \emph{R}a8, our \emph{r}a1 as their \emph{B}c8; transferred move \texttt{d6e5} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0001\#2208} (ply 11) [structural distance $d$=57, QAP obj=92]: the master played \texttt{cxd4}; under $\mu$ our \emph{Pd3} plays the role of that game's \emph{Pc4}; cross-type roles: our \emph{p}c2 as their \emph{R}a8, our \emph{r}a1 as their \emph{B}c8; transferred move \texttt{d6e5} \textbf{(endorses this move)}. Synthesis: 9 retrieved analogs transferred to \texttt{dxe5} (summed QAP objective 760, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m15}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r1bqk2r/ppp1ppbp/1nn3p1/4P3/8/1B3N2/PPP1KPPP/RNBQ2R1 b kq - 0 9},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d8-d1}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r1bqk1nr/1pp2ppp/1bn5/p3p3/2P5/P1N2N2/1P2PPPP/R1BQKB1R w KQkq - 0 9},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d1-d8}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r1bqk1nr/1pp2ppp/1bn5/p3p3/2P5/P1N2N2/1P2PPPP/R1BQKB1R w KQkq - 0 9},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d1-d8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r1bqk1nr/1pp2ppp/1bn5/p3p3/2P5/P1N2N2/1P2PPPP/R1BQKB1R w KQkq - 0 9},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d1-d8}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 9, Black: \texttt{Qxd1+}.} (a) Our position; Melanie plays \texttt{Qxd1+} (\texttt{d8d1}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0000\#3048} (ply 16) [structural distance $d$=46, QAP obj=84]: the master played \texttt{Qxd8+}; under $\mu$ our \emph{Qd1} plays the role of that game's \emph{Qd1}; cross-type roles: our \emph{P}e7 as their \emph{B}f1, our \emph{N}c6 as their \emph{R}h1; transferred move \texttt{d8d1} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0000\#3049} (ply 16) [structural distance $d$=46, QAP obj=84]: the master played \texttt{Qxd8+}; under $\mu$ our \emph{Qd1} plays the role of that game's \emph{Qd1}; cross-type roles: our \emph{P}e7 as their \emph{B}f1, our \emph{N}c6 as their \emph{R}h1; transferred move \texttt{d8d1} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0001\#1683} (ply 16) [structural distance $d$=46, QAP obj=84]: the master played \texttt{Qxd8+}; under $\mu$ our \emph{Qd1} plays the role of that game's \emph{Qd1}; cross-type roles: our \emph{P}e7 as their \emph{B}f1, our \emph{N}c6 as their \emph{R}h1; transferred move \texttt{d8d1} \textbf{(endorses this move)}. Synthesis: 8 retrieved analogs transferred to \texttt{Qxd1+} (summed QAP objective 602, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m17}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r1b1k2r/ppp1ppbp/1nn3p1/4P3/8/1B3N2/PPP2PPP/RNBK2R1 b kq - 0 10},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c8-g4}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r1bk3r/1pp2ppp/1bn2n2/p3p3/N1P5/P4N2/1P2PPPP/R1B1KB1R w KQ - 2 11},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c1-g5}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r2k1b1r/pppb1pp1/2p4p/4Pn2/8/2N2N1P/PPP2PP1/R1B2RK1 w - - 0 11},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b2-b3}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r2k1b1r/pppb1pp1/2p4p/4Pn2/8/2N2N1P/PPP2PP1/R1B2RK1 w - - 0 11},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b2-b3}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 10, Black: \texttt{Bg4}.} (a) Our position; Melanie plays \texttt{Bg4} (\texttt{c8g4}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0000\#3048} (ply 20) [structural distance $d$=44, QAP obj=15]: the master played \texttt{Bg5}; under $\mu$ our \emph{Bc1} plays the role of that game's \emph{Bc1}; cross-type roles: our \emph{P}e7 as their \emph{B}f1, our \emph{N}b6 as their \emph{R}h1; transferred move \texttt{c8g4} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0000\#1354} (ply 20) [structural distance $d$=52, QAP obj=13]: the master played \texttt{b3}; under $\mu$ our \emph{Bc1} plays the role of that game's \emph{Pb2} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{P}e7 as their \emph{R}f1, our \emph{r}a1 as their \emph{P}a2; transferred move \texttt{c8g4} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0000\#1437} (ply 20) [structural distance $d$=52, QAP obj=13]: the master played \texttt{b3}; under $\mu$ our \emph{Bc1} plays the role of that game's \emph{Pb2} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{P}e7 as their \emph{R}f1, our \emph{r}a1 as their \emph{P}a2; transferred move \texttt{c8g4} \textbf{(endorses this move)}. Synthesis: 8 retrieved analogs transferred to \texttt{Bg4} (summed QAP objective 107, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m19}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r3k2r/ppp1ppbp/1nn3p1/4P3/6b1/NB3N2/PPP2PPP/R1BK2R1 b kq - 2 11},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h8-g8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r1b2rk1/pp3pp1/2n1pn1p/8/1bp5/2N1BNP1/PP2PPBP/R2R2K1 w - - 0 14},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f3-d2}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={rnb2rk1/ppp2p1p/1n4p1/4b3/4P3/2N1B2P/PP3PP1/2R1KBNR b K - 1 11},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f8-e8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={rn2kb1r/1b3ppp/p3pn2/1pP5/2P5/1B3N1P/PP3PP1/R1BNK2R b KQkq - 0 11},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f6-e4}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 11, Black: \texttt{Rg8}.} (a) Our position; Melanie plays \texttt{Rg8} (\texttt{h8g8}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0001\#726} (ply 26) [structural distance $d$=70, QAP obj=26]: the master played \texttt{Nd2}; under $\mu$ our \emph{Rh1} plays the role of that game's \emph{Nf3} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{p}e5 as their \emph{R}a1, our \emph{r}a1 as their \emph{P}h2; transferred move \texttt{h8g8} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0000\#3301} (ply 21) [structural distance $d$=73, QAP obj=17]: the master played \texttt{Re8}; under $\mu$ our \emph{Rh1} plays the role of that game's \emph{Rf1}; cross-type roles: our \emph{B}g7 as their \emph{R}a8, our \emph{P}c7 as their \emph{B}c8; transferred move \texttt{h8g8} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0003\#1495} (ply 21) [structural distance $d$=64, QAP obj=13]: the master played \texttt{Ne4}; under $\mu$ our \emph{Rh1} plays the role of that game's \emph{Nf3} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{p}b2 as their \emph{R}a8, our \emph{P}c7 as their \emph{N}b8; transferred move \texttt{h8g8} \textbf{(endorses this move)}. Synthesis: 3 retrieved analogs transferred to \texttt{Rg8} (summed QAP objective 57, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m21}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r3k1r1/ppp1ppbp/1nn3p1/4P3/6bP/NB3N2/PPP2PP1/R1BK2R1 b q - 0 12},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e8-c8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r1b4r/1p2kppp/2n2n2/p3p3/Nb6/1N4P1/PP1BPPBP/R3K2R w KQ - 6 14},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e1-g1}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r1b4r/1p2kppp/2n2n2/p3p3/Nb6/1N4P1/PP1BPPBP/R3K2R w KQ - 4 14},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e1-g1}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r1b1k2r/ppp1bpp1/1nn4p/4P3/4P2P/P3BN2/1P3PP1/RN2KB1R b KQkq - 2 10},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e8-g8}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 12, Black: \texttt{O-O-O+}.} (a) Our position; Melanie plays \texttt{O-O-O+} (\texttt{e8c8}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0001\#1066} (ply 26) [structural distance $d$=65, QAP obj=28]: the master played \texttt{O-O}; under $\mu$ our \emph{Ke1} plays the role of that game's \emph{Ke1}; cross-type roles: our \emph{n}f3 as their \emph{B}d2, our \emph{N}b6 as their \emph{B}g2; transferred move \texttt{e8c8} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0001\#1067} (ply 26) [structural distance $d$=65, QAP obj=28]: the master played \texttt{O-O}; under $\mu$ our \emph{Ke1} plays the role of that game's \emph{Ke1}; cross-type roles: our \emph{n}f3 as their \emph{B}d2, our \emph{N}b6 as their \emph{B}g2; transferred move \texttt{e8c8} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0003\#1492} (ply 19) [structural distance $d$=58, QAP obj=18]: the master played \texttt{O-O}; under $\mu$ our \emph{Ke1} plays the role of that game's \emph{Ke1}; cross-type roles: our \emph{p}h4 as their \emph{R}a8, our \emph{N}b6 as their \emph{B}c8; transferred move \texttt{e8c8} \textbf{(endorses this move)}. Synthesis: 3 retrieved analogs transferred to \texttt{O-O-O+} (summed QAP objective 73, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m23}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2kr2r1/ppp1ppbp/1nn3p1/4P3/6bP/NB3N2/PPP2PP1/R1B1K1R1 b - - 2 13},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g4-f3}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r3r1k1/pb4bp/np3np1/2p1p1B1/1PP1p3/P1N3PN/5PBP/2RR2K1 w - - 0 17},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g5-f6}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r4rk1/ppp1bpp1/1nn4p/1N2P3/4P1bP/P3BN2/1P3PP1/R3KB1R b KQ - 6 12},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g4-f3}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r2bk2r/1p3ppp/2p1pn2/p3nb2/3P4/1N4P1/PP1BPPBP/R4RK1 w kq - 0 14},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d4-e5}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 13, Black: \texttt{Bxf3}.} (a) Our position; Melanie plays \texttt{Bxf3} (\texttt{g4f3}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0000\#680} (ply 32) [structural distance $d$=86, QAP obj=46]: the master played \texttt{Bxf6}; under $\mu$ our \emph{Bg5} plays the role of that game's \emph{Bg5}; cross-type roles: our \emph{B}g7 as their \emph{P}g3, our \emph{b}c1 as their \emph{n}a6; transferred move \texttt{g4f3} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0003\#1492} (ply 23) [structural distance $d$=75, QAP obj=37]: the master played \texttt{Bxf3}; under $\mu$ our \emph{Bg5} plays the role of that game's \emph{Bg5}; cross-type roles: our \emph{N}b6 as their \emph{P}g7, our \emph{b}b3 as their \emph{N}b6; transferred move \texttt{g4f3} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0000\#661} (ply 26) [structural distance $d$=67, QAP obj=33]: the master played \texttt{dxe5}; under $\mu$ our \emph{Bg5} plays the role of that game's \emph{Pd4} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{N}b6 as their \emph{b}f5, our \emph{P}f7 as their \emph{n}f6; transferred move \texttt{g4f3} \textbf{(endorses this move)}. Synthesis: 5 retrieved analogs transferred to \texttt{Bxf3} (summed QAP objective 182, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m25}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2kr2r1/ppp1ppbp/1nn3p1/4P3/7P/NB3P2/PPP2P2/R1B1K1R1 b - - 0 14},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c6-e5}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={3rk2r/pp2bpp1/2n1n1p1/3pP3/8/5NB1/PPP3PP/2KR1B1R b k - 3 18},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g6-g5}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r1b2rk1/ppp3pp/2nb2p1/3p2B1/3P4/2N2N2/PPP2PPP/R3R1K1 w - - 0 14},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c3-d5}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={rnb1r1k1/pp3p2/1bp2n1p/6p1/5B2/1NN3P1/PP2PPBP/R2R2K1 w - - 2 15},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f4-d6}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 14, Black: \texttt{Nxe5}.} (a) Our position; Melanie plays \texttt{Nxe5} (\texttt{c6e5}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0002\#695} (ply 35) [structural distance $d$=81, QAP obj=76]: the master played \texttt{g5}; under $\mu$ our \emph{Nc3} plays the role of that game's \emph{Pg3} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{b}c1 as their \emph{P}b7, our \emph{n}a3 as their \emph{B}e7; transferred move \texttt{c6e5} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0002\#1842} (ply 26) [structural distance $d$=66, QAP obj=43]: the master played \texttt{Nxd5}; under $\mu$ our \emph{Nc3} plays the role of that game's \emph{Nc3}; cross-type roles: our \emph{N}b6 as their \emph{R}a1, our \emph{r}a1 as their \emph{P}b2; transferred move \texttt{c6e5} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0003\#2696} (ply 28) [structural distance $d$=73, QAP obj=30]: the master played \texttt{Bd6}; under $\mu$ our \emph{Nc3} plays the role of that game's \emph{Bf4} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{N}b6 as their \emph{P}h2, our \emph{p}a2 as their \emph{N}b3; transferred move \texttt{c6e5} \textbf{(endorses this move)}. Synthesis: 7 retrieved analogs transferred to \texttt{Nxe5} (summed QAP objective 203, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m27}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2kr2r1/ppp1ppbp/1n4p1/4n3/7P/NB3P2/PPP1KP2/R1B3R1 b - - 1 15},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={a7-a5}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r2r2k1/pp3pbp/3P1np1/P3p3/1np5/2N2B1P/1P3PP1/R1BR2K1 b - - 0 19},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b4-c2}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={4rbk1/5pp1/r1p4p/p1pnNb2/2N5/2P3B1/PP3PPP/R3R1K1 w - - 4 20},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={a2-a4}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r3r3/p2k1p2/1np4p/3n1bp1/P2Pp3/1B5P/P3NPP1/R1B2RK1 b - - 0 20},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={a7-a5}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 15, Black: \texttt{a5}.} (a) Our position; Melanie plays \texttt{a5} (\texttt{a7a5}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0001\#1281} (ply 37) [structural distance $d$=53, QAP obj=51]: the master played \texttt{Nc2}; under $\mu$ our \emph{Pa2} plays the role of that game's \emph{Nb5} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{R}d8 as their \emph{B}g7, our \emph{n}a3 as their \emph{P}h7; transferred move \texttt{a7a5} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0000\#2224} (ply 38) [structural distance $d$=81, QAP obj=28]: the master played \texttt{a4}; under $\mu$ our \emph{Pa2} plays the role of that game's \emph{Pa2}; cross-type roles: our \emph{p}b2 as their \emph{R}a1, our \emph{B}g7 as their \emph{R}e1; transferred move \texttt{a7a5} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0000\#3204} (ply 39) [structural distance $d$=81, QAP obj=15]: the master played \texttt{a5}; under $\mu$ our \emph{Pa2} plays the role of that game's \emph{Pa2}; cross-type roles: our \emph{n}a3 as their \emph{R}a8, our \emph{B}g7 as their \emph{P}c6; transferred move \texttt{a7a5} \textbf{(endorses this move)}. Synthesis: 3 retrieved analogs transferred to \texttt{a5} (summed QAP objective 94, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m29}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2kr2r1/1pp1ppbp/1n4p1/p3n3/5B1P/NB3P2/PPP1KP2/R5R1 b - - 1 16},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e5-c6}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r2r2k1/1p1b1ppp/1pp5/2bn4/8/P4NPP/1P1BPPB1/R4RK1 w - - 2 20},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={a1-c1}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2rr2k1/pp2bpp1/7p/nNPp1b2/8/4PN2/P3BPPP/2RR2K1 w - - 8 19},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b5-a7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2rr2k1/ppb2pp1/2n1pn1p/1B6/6P1/P1N2P2/1PPB2P1/2KR3R b - - 4 22},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c6-e7}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 16, Black: \texttt{Nc6}.} (a) Our position; Melanie plays \texttt{Nc6} (\texttt{e5c6}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0001\#362} (ply 38) [structural distance $d$=74, QAP obj=48]: the master played \texttt{Rac1}; under $\mu$ our \emph{Ne4} plays the role of that game's \emph{Ra1} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{n}a3 as their \emph{B}d2, our \emph{P}c7 as their \emph{B}g2; transferred move \texttt{e5c6} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0000\#228} (ply 36) [structural distance $d$=67, QAP obj=40]: the master played \texttt{Nxa7}; under $\mu$ our \emph{Ne4} plays the role of that game's \emph{Nb5}; cross-type roles: our \emph{n}a3 as their \emph{P}h2, our \emph{b}f4 as their \emph{n}a5; transferred move \texttt{e5c6} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0003\#1970} (ply 43) [structural distance $d$=79, QAP obj=35]: the master played \texttt{Ne7}; under $\mu$ our \emph{Ne4} plays the role of that game's \emph{Nc3}; cross-type roles: our \emph{b}b3 as their \emph{R}d8, our \emph{B}g7 as their \emph{P}b7; transferred move \texttt{e5c6} \textbf{(endorses this move)}. Synthesis: 7 retrieved analogs transferred to \texttt{Nc6} (summed QAP objective 234, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m31}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2kr2r1/1pp1pBbp/1nn3p1/p7/5B1P/N4P2/PPP1KP2/R5R1 b - - 0 17},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g7-b2}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r1r3k1/1p1b1ppp/4pn2/2b5/P1P5/P1N4P/2B1NPP1/RR4K1 w - - 0 23},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b1-b7}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2b1r1k1/r3bpp1/1Bp1pn1p/p7/N1BP4/8/PP3PPP/2R1R1K1 b - - 1 20},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={a7-b7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={3r1kr1/p1Bp1p2/Bpn2n1p/2p3p1/4P3/8/PP3PPP/2KRR3 b - - 1 22},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d8-e8}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 17, Black: \texttt{Bxb2}.} (a) Our position; Melanie plays \texttt{Bxb2} (\texttt{g7b2}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0000\#547} (ply 44) [structural distance $d$=80, QAP obj=23]: the master played \texttt{Rxb7}; under $\mu$ our \emph{Bg2} plays the role of that game's \emph{Rb1} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{n}a3 as their \emph{P}h3, our \emph{r}g1 as their \emph{b}c5; transferred move \texttt{g7b2} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0000\#865} (ply 39) [structural distance $d$=85, QAP obj=49]: the master played \texttt{Rb7}; under $\mu$ our \emph{Rg1} plays the role of that game's \emph{Ra2}; cross-type roles: our \emph{p}f2 as their \emph{B}c8, our \emph{N}b6 as their \emph{P}c6; transferred move \texttt{g8e8}. (d) Retrieved from \texttt{ccrl\_top\_p0001\#2841} (ply 43) [structural distance $d$=80, QAP obj=48]: the master played \texttt{Re8}; under $\mu$ our \emph{Rg1} plays the role of that game's \emph{Rd1}; cross-type roles: our \emph{r}g1 as their \emph{b}a6, our \emph{b}f4 as their \emph{N}f6; transferred move \texttt{g8e8}. Synthesis: 1 retrieved analog transferred to \texttt{Bxb2} (summed QAP objective 23, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m33}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2kr2r1/1pp1p2p/1nn1B1p1/p7/5B1P/N4P2/PbP1KP2/R5R1 b - - 1 18},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b6-d7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r4rk1/1p1n2pp/p1p5/3B1p2/3P4/RP6/1P1BPP1P/R5K1 b - - 0 21},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c6-d5}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={3rk2r/1p3pp1/p1n1n3/3pP1p1/8/4bNBP/PPP1B1P1/1K1R3R b k - 0 22},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e6-f4}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2kr3r/pp4p1/2np1n1p/1B2pb2/8/2P2N1P/PP3PP1/R1BR2K1 b - - 0 16},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g7-g5}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 18, Black: \texttt{Nd7}.} (a) Our position; Melanie plays \texttt{Nd7} (\texttt{b6d7}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0002\#3295} (ply 41) [structural distance $d$=82, QAP obj=81]: the master played \texttt{cxd5}; under $\mu$ our \emph{Nb3} plays the role of that game's \emph{Pc3} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{p}c2 as their \emph{N}d7, our \emph{b}f4 as their \emph{P}h7; transferred move \texttt{b6d7} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0002\#695} (ply 43) [structural distance $d$=83, QAP obj=45]: the master played \texttt{Nf4}; under $\mu$ our \emph{Nb3} plays the role of that game's \emph{Ne3}; cross-type roles: our \emph{b}e6 as their \emph{P}f7, our \emph{R}d8 as their \emph{P}g7; transferred move \texttt{b6d7} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0001\#2267} (ply 31) [structural distance $d$=84, QAP obj=33]: the master played \texttt{g5}; under $\mu$ our \emph{Nb3} plays the role of that game's \emph{Pg2} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{b}f4 as their \emph{P}b7, our \emph{B}b2 as their \emph{N}f6; transferred move \texttt{b6d7} \textbf{(endorses this move)}. Synthesis: 10 retrieved analogs transferred to \texttt{Nd7} (summed QAP objective 269, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m35}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2kr2B1/1ppnp2p/2n3p1/p7/5B1P/N4P2/PbP1KP2/R5R1 b - - 0 19},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d8-g8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={3rk3/pp2p1bp/2n1b1p1/8/8/2PB4/PP3KPP/R1B1R3 b - - 0 19},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d8-d3}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r3k2r/1p2nppp/2p5/p3P1B1/2bb4/P4N2/1P3PPP/2RR2K1 w kq - 0 16},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f3-d4}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r3rbk1/3b1pp1/2N4p/8/p2N4/P1n1P3/5PPP/R1R3K1 w - - 0 27},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c1-c3}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 19, Black: \texttt{Rxg8}.} (a) Our position; Melanie plays \texttt{Rxg8} (\texttt{d8g8}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0000\#2894} (ply 37) [structural distance $d$=83, QAP obj=22]: the master played \texttt{Rxd3}; under $\mu$ our \emph{Rd1} plays the role of that game's \emph{Rd1}; cross-type roles: our \emph{p}h4 as their \emph{B}g7, our \emph{B}b2 as their \emph{P}h7; transferred move \texttt{d8g8} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0003\#1880} (ply 30) [structural distance $d$=81, QAP obj=22]: the master played \texttt{Nxd4}; under $\mu$ our \emph{Rd1} plays the role of that game's \emph{Nf3} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{N}c6 as their \emph{R}c1, our \emph{N}d7 as their \emph{P}h2; transferred move \texttt{d8g8} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0001\#62} (ply 52) [structural distance $d$=78, QAP obj=20]: the master played \texttt{Rxc3}; under $\mu$ our \emph{Rd1} plays the role of that game's \emph{Rc1}; cross-type roles: our \emph{N}c6 as their \emph{R}a1, our \emph{r}a1 as their \emph{P}g2; transferred move \texttt{d8g8} \textbf{(endorses this move)}. Synthesis: 5 retrieved analogs transferred to \texttt{Rxg8} (summed QAP objective 98, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m37}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2k3r1/1ppnp2p/2n3p1/pN6/5B1P/5P2/PbP1KP2/R5R1 b - - 1 20},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b2-a1}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r4k2/p2r1pp1/1p3n1p/1N2p3/1P6/6P1/1P2PP1P/R2R2K1 b - - 2 25},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d7-d1}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={1r4k1/1r3p1p/p1B2bp1/8/8/5N1P/PP1R1PP1/6K1 w - - 1 27},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c6-b7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={1r4k1/1r3p1p/p1B2bp1/8/8/5N1P/PP1R1PP1/6K1 w - - 1 27},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c6-b7}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 20, Black: \texttt{Bxa1}.} (a) Our position; Melanie plays \texttt{Bxa1} (\texttt{b2a1}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0002\#551} (ply 49) [structural distance $d$=62, QAP obj=32]: the master played \texttt{Rxd1+}; under $\mu$ our \emph{Bb7} plays the role of that game's \emph{Rd2} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{n}b5 as their \emph{P}h6, our \emph{b}f4 as their \emph{n}b5; transferred move \texttt{b2a1} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0000\#471} (ply 52) [structural distance $d$=57, QAP obj=26]: the master played \texttt{Bxb7}; under $\mu$ our \emph{Bb7} plays the role of that game's \emph{Bc6}; cross-type roles: our \emph{R}g8 as their \emph{P}a2, our \emph{P}e7 as their \emph{R}d2; transferred move \texttt{b2a1} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0001\#1091} (ply 52) [structural distance $d$=57, QAP obj=26]: the master played \texttt{Bxb7}; under $\mu$ our \emph{Bb7} plays the role of that game's \emph{Bc6}; cross-type roles: our \emph{R}g8 as their \emph{P}a2, our \emph{P}e7 as their \emph{R}d2; transferred move \texttt{b2a1} \textbf{(endorses this move)}. Synthesis: 4 retrieved analogs transferred to \texttt{Bxa1} (summed QAP objective 89, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m39}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2k3r1/1ppnp2p/2n3p1/pN6/5B1P/5P2/P1P1KP2/R7 b - - 0 21},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c6-b4}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2b1k2r/5ppp/p3p3/4n1B1/Pp1R4/1B6/1P3PPP/6K1 b k - 0 21},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e5-c6}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={1k5r/pp3p1p/2p5/P1b2N2/n4P2/4P3/4KPBP/7R w - - 1 25},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h1-a1}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={1k5r/pp3p1p/2p5/P1b2N2/n4P2/4P3/4KPBP/7R w - - 0 25},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h1-a1}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 21, Black: \texttt{Nb4}.} (a) Our position; Melanie plays \texttt{Nb4} (\texttt{c6b4}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0003\#2119} (ply 41) [structural distance $d$=48, QAP obj=31]: the master played \texttt{Nc6}; under $\mu$ our \emph{Nc3} plays the role of that game's \emph{Ne4}; cross-type roles: our \emph{N}d7 as their \emph{B}c8, our \emph{p}h4 as their \emph{b}g5; transferred move \texttt{c6b4} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0002\#1451} (ply 48) [structural distance $d$=49, QAP obj=30]: the master played \texttt{Ra1}; under $\mu$ our \emph{Nc3} plays the role of that game's \emph{Rh1} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{p}f3 as their \emph{n}a4, our \emph{n}b5 as their \emph{b}c5; transferred move \texttt{c6b4} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0002\#2418} (ply 48) [structural distance $d$=49, QAP obj=30]: the master played \texttt{Ra1}; under $\mu$ our \emph{Nc3} plays the role of that game's \emph{Rh1} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{p}f3 as their \emph{n}a4, our \emph{n}b5 as their \emph{b}c5; transferred move \texttt{c6b4} \textbf{(endorses this move)}. Synthesis: 3 retrieved analogs transferred to \texttt{Nb4} (summed QAP objective 91, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m41}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2k3r1/Nppnp2p/6p1/p7/1n3B1P/5P2/P1P1KP2/R7 b - - 2 22},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c8-d8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={B5k1/p4ppp/4p3/R1N1P3/8/1b4P1/1r2nP1P/2R3K1 w - - 0 27},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g1-g2}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r5k1/p3Npp1/5n1p/2p5/5B2/2P1P2P/P4Pb1/2R3K1 b - - 1 25},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g8-f8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={3R2k1/1p3pp1/4pn1p/p1r5/P7/1BP2P1P/1P3P2/6K1 b - - 1 23},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g8-h7}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 22, Black: \texttt{Kd8}.} (a) Our position; Melanie plays \texttt{Kd8} (\texttt{c8d8}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0002\#3282} (ply 52) [structural distance $d$=52, QAP obj=75]: the master played \texttt{Kg2}; under $\mu$ our \emph{Kc1} plays the role of that game's \emph{Kg1}; cross-type roles: our \emph{b}f4 as their \emph{r}b2, our \emph{p}h4 as their \emph{b}b3; transferred move \texttt{c8d8} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0002\#1236} (ply 49) [structural distance $d$=49, QAP obj=73]: the master played \texttt{Kf8}; under $\mu$ our \emph{Kc1} plays the role of that game's \emph{Kg1}; cross-type roles: our \emph{N}d7 as their \emph{P}g7, our \emph{b}f4 as their \emph{N}f6; transferred move \texttt{c8d8} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0000\#191} (ply 45) [structural distance $d$=50, QAP obj=48]: the master played \texttt{Kh7}; under $\mu$ our \emph{Kc1} plays the role of that game's \emph{Kg1}; cross-type roles: our \emph{n}a7 as their \emph{r}d8, our \emph{N}d7 as their \emph{P}f7; transferred move \texttt{c8d8} \textbf{(endorses this move)}. Synthesis: 7 retrieved analogs transferred to \texttt{Kd8} (summed QAP objective 245, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m43}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={3k2r1/Nppnp2p/6p1/p7/1n3B1P/2P2P2/P3KP2/R7 b - - 0 23},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b4-c2}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={3r1k2/p3pp1p/6p1/8/1n6/P1P1PP2/4BP1P/4R1K1 b - - 0 21},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b4-a2}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={3rn1k1/p5pp/bp6/2pP1p2/2N5/1P4P1/P4PBP/2R3K1 w - - 0 24},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c4-e5}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2k1r3/p1pp2pp/8/2pb4/2N3P1/2PP4/P1P3PP/5RK1 w - - 1 26},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c4-a5}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 23, Black: \texttt{Nc2}.} (a) Our position; Melanie plays \texttt{Nc2} (\texttt{b4c2}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0002\#3136} (ply 41) [structural distance $d$=48, QAP obj=37]: the master played \texttt{Na2}; under $\mu$ our \emph{Nb5} plays the role of that game's \emph{Nb5}; cross-type roles: our \emph{N}d7 as their \emph{P}e7, our \emph{b}f4 as their \emph{P}g6; transferred move \texttt{b4c2} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0003\#1975} (ply 46) [structural distance $d$=44, QAP obj=23]: the master played \texttt{Ne5}; under $\mu$ our \emph{Nb5} plays the role of that game's \emph{Nc4}; cross-type roles: our \emph{N}d7 as their \emph{P}f2, our \emph{P}e7 as their \emph{B}g2; transferred move \texttt{b4c2} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0001\#1160} (ply 50) [structural distance $d$=36, QAP obj=21]: the master played \texttt{Na5}; under $\mu$ our \emph{Nb5} plays the role of that game's \emph{Nc4}; cross-type roles: our \emph{N}d7 as their \emph{P}h2, our \emph{p}c3 as their \emph{b}d5; transferred move \texttt{b4c2} \textbf{(endorses this move)}. Synthesis: 4 retrieved analogs transferred to \texttt{Nc2} (summed QAP objective 91, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m45}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={3k2r1/Nppnp2p/6p1/p7/5B1P/2P2P2/P1n1KP2/7R b - - 2 24},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g8-g7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2k4r/1p4pp/nBp5/5p2/2P2Nn1/1P6/PK3P1P/3R4 b - - 1 25},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h8-e8}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={6k1/p1p1b1p1/7p/n3PB1P/2pN4/P7/1r3PP1/5RK1 w - - 0 28},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f1-d1}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r5k1/p4pp1/2p1p2p/2p5/4P3/2B5/P1P1bPPP/R5K1 b - - 1 23},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={a8-d8}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 24, Black: \texttt{Rg7}.} (a) Our position; Melanie plays \texttt{Rg7} (\texttt{g8g7}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0000\#3261} (ply 49) [structural distance $d$=44, QAP obj=24]: the master played \texttt{Re8}; under $\mu$ our \emph{Rg1} plays the role of that game's \emph{Rh1}; cross-type roles: our \emph{P}a5 as their \emph{N}a6, our \emph{N}d7 as their \emph{b}b6; transferred move \texttt{g8g7} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0002\#3090} (ply 54) [structural distance $d$=38, QAP obj=23]: the master played \texttt{Rd1}; under $\mu$ our \emph{Rg1} plays the role of that game's \emph{Rf1}; cross-type roles: our \emph{b}f4 as their \emph{r}b2, our \emph{N}c2 as their \emph{B}f5; transferred move \texttt{g8g7} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0003\#2009} (ply 45) [structural distance $d$=41, QAP obj=21]: the master played \texttt{Rd8}; under $\mu$ our \emph{Rg1} plays the role of that game's \emph{Ra1}; cross-type roles: our \emph{N}c2 as their \emph{P}c6, our \emph{n}a7 as their \emph{P}h6; transferred move \texttt{g8g7} \textbf{(endorses this move)}. Synthesis: 9 retrieved analogs transferred to \texttt{Rg7} (summed QAP objective 161, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m47}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={3k4/Nppnp1rp/6pB/p7/7P/2P2P2/P1n1KP2/7R b - - 4 25},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g7-f7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2r5/5p2/p1p3k1/3p1p2/PP3P2/1KP1R3/4Nb1P/8 w - - 2 31},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e3-f3}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={7k/2p1rp1p/B2n1p2/p1NP4/3b4/6P1/P1R2PKP/8 w - - 8 32},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c5-b7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={5rk1/1p4pp/2p5/p3Pp2/5P2/1n3K1P/1P1RN1P1/8 w - - 0 29},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d2-d6}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 25, Black: \texttt{Rf7}.} (a) Our position; Melanie plays \texttt{Rf7} (\texttt{g7f7}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0002\#1113} (ply 60) [structural distance $d$=46, QAP obj=23]: the master played \texttt{Rf3}; under $\mu$ our \emph{Rg2} plays the role of that game's \emph{Re3}; cross-type roles: our \emph{P}g6 as their \emph{N}e2, our \emph{N}d7 as their \emph{P}b4; transferred move \texttt{g7f7} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0000\#3069} (ply 62) [structural distance $d$=40, QAP obj=17]: the master played \texttt{Nb7}; under $\mu$ our \emph{Rg2} plays the role of that game's \emph{Nc5} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{P}a5 as their \emph{R}c2, our \emph{N}d7 as their \emph{P}h2; transferred move \texttt{g7f7} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0003\#2141} (ply 56) [structural distance $d$=45, QAP obj=16]: the master played \texttt{Rd6}; under $\mu$ our \emph{Rg2} plays the role of that game's \emph{Rd2}; cross-type roles: our \emph{P}h7 as their \emph{N}e2, our \emph{N}d7 as their \emph{P}g2; transferred move \texttt{g7f7} \textbf{(endorses this move)}. Synthesis: 11 retrieved analogs transferred to \texttt{Rf7} (summed QAP objective 123, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m49}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={3k4/Nppnpr1p/6p1/p7/7P/2P2P2/P1n1KP2/2B4R b - - 6 26},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d8-e8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={1r2k3/5ppp/2p1pb2/p1P5/P7/1P1R1N1P/5PP1/5K2 w - - 1 30},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f1-e2}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={5k2/3n1ppp/b3p3/8/2pP4/2N3P1/1r2PPBP/2R3K1 w - - 0 21},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g1-f1}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2r3k1/5p1p/p1P3pb/n3P3/Pp1N4/8/1B3PPP/3R2K1 w - - 3 28},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g1-f1}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 26, Black: \texttt{Ke8}.} (a) Our position; Melanie plays \texttt{Ke8} (\texttt{d8e8}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0001\#3113} (ply 58) [structural distance $d$=39, QAP obj=18]: the master played \texttt{Ke2}; under $\mu$ our \emph{Kd1} plays the role of that game's \emph{Kf1}; cross-type roles: our \emph{p}f2 as their \emph{R}d3, our \emph{b}c1 as their \emph{N}f3; transferred move \texttt{d8e8} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0001\#2733} (ply 40) [structural distance $d$=43, QAP obj=17]: the master played \texttt{Kf1}; under $\mu$ our \emph{Kd1} plays the role of that game's \emph{Kg1}; cross-type roles: our \emph{b}c1 as their \emph{R}c1, our \emph{P}c7 as their \emph{B}g2; transferred move \texttt{d8e8} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0002\#3035} (ply 54) [structural distance $d$=41, QAP obj=17]: the master played \texttt{Kf1}; under $\mu$ our \emph{Kd1} plays the role of that game's \emph{Kg1}; cross-type roles: our \emph{P}c7 as their \emph{R}d1, our \emph{P}b7 as their \emph{B}b2; transferred move \texttt{d8e8} \textbf{(endorses this move)}. Synthesis: 8 retrieved analogs transferred to \texttt{Ke8} (summed QAP objective 100, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m51}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={4k3/Nppnpr1p/6p1/p7/5P1P/2P5/P1n1KP2/2B4R b - - 0 27},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f7-g7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2b4r/ppp1kp2/7p/3pP2P/8/5N2/PPPR2P1/6K1 w - - 0 26},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d2-d5}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={6k1/3r1p2/1b2pp2/1Np4p/P7/1P3P2/5P1P/2R3K1 w - - 0 31},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c1-a1}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2b1k2r/p2n1ppp/4p3/4P3/3PpP2/8/PN1K2PP/5B1R b k - 0 22},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d7-b6}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 27, Black: \texttt{Rg7}.} (a) Our position; Melanie plays \texttt{Rg7} (\texttt{f7g7}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0003\#2525} (ply 50) [structural distance $d$=45, QAP obj=25]: the master played \texttt{Rxd5}; under $\mu$ our \emph{Rf2} plays the role of that game's \emph{Rd2}; cross-type roles: our \emph{r}h1 as their \emph{P}a2, our \emph{N}d7 as their \emph{P}b2; transferred move \texttt{f7g7} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0002\#785} (ply 60) [structural distance $d$=36, QAP obj=18]: the master played \texttt{Ra1}; under $\mu$ our \emph{Rf2} plays the role of that game's \emph{Rc1}; cross-type roles: our \emph{N}d7 as their \emph{P}f2, our \emph{n}a7 as their \emph{p}f6; transferred move \texttt{f7g7} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0003\#1750} (ply 43) [structural distance $d$=41, QAP obj=16]: the master played \texttt{Nb6}; under $\mu$ our \emph{Rf2} plays the role of that game's \emph{Nd2} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{P}b7 as their \emph{R}h8, our \emph{N}d7 as their \emph{P}g7; transferred move \texttt{f7g7} \textbf{(endorses this move)}. Synthesis: 9 retrieved analogs transferred to \texttt{Rg7} (summed QAP objective 135, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m53}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={4k3/Nppnp1rp/6p1/p7/5P1P/2P2K2/P1n2P2/2B4R b - - 2 28},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g7-g8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r5k1/pp6/4Nbp1/n3pp2/P1P5/2P5/1P4PP/2BR2K1 b - - 0 27},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={a8-e8}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={1r3bk1/5pp1/4p2p/p7/2p5/4P3/PP1R1PPP/3B1K2 w - - 0 29},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d2-c2}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/5pk1/n1Pp2p1/7p/rp2PP2/6P1/1R4BP/6K1 b - - 0 33},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={a4-a1}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 28, Black: \texttt{Rg8}.} (a) Our position; Melanie plays \texttt{Rg8} (\texttt{g7g8}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0003\#620} (ply 53) [structural distance $d$=42, QAP obj=4]: the master played \texttt{Re8}; under $\mu$ our \emph{Rg2} plays the role of that game's \emph{Ra1}; cross-type roles: our \emph{r}h1 as their \emph{p}h2, our \emph{n}a7 as their \emph{b}c1; transferred move \texttt{g7g8} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0003\#560} (ply 56) [structural distance $d$=44, QAP obj=4]: the master played \texttt{Rc2}; under $\mu$ our \emph{Rg2} plays the role of that game's \emph{Rd2}; cross-type roles: our \emph{P}g6 as their \emph{B}d1, our \emph{b}c1 as their \emph{P}b2; transferred move \texttt{g7g8} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0000\#2155} (ply 65) [structural distance $d$=43, QAP obj=4]: the master played \texttt{Ra1+}; under $\mu$ our \emph{Rg2} plays the role of that game's \emph{Ra5}; cross-type roles: our \emph{P}h7 as their \emph{N}a6, our \emph{N}d7 as their \emph{p}e4; transferred move \texttt{g7g8} \textbf{(endorses this move)}. Synthesis: 12 retrieved analogs transferred to \texttt{Rg8} (summed QAP objective 36, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m55}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={4k1r1/Nppnp2p/6p1/p7/5P1P/2P5/P1n2PK1/2B4R b - - 4 29},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e8-d8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={7r/4N1pp/p1p1kn2/8/1pP5/8/PP3P1P/R1B3K1 b - - 0 22},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e6-e7}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r5k1/4p2p/6p1/p2Pp3/P3n3/1P6/6PP/2R1B2K b - - 1 34},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g8-f7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={5k2/p1Nb1pp1/3P4/1p2r3/2p3p1/8/PPP3PP/3R2K1 w - - 4 29},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g1-f2}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 29, Black: \texttt{Kd8}.} (a) Our position; Melanie plays \texttt{Kd8} (\texttt{e8d8}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0001\#2265} (ply 43) [structural distance $d$=40, QAP obj=5]: the master played \texttt{Kxe7}; under $\mu$ our \emph{Ke1} plays the role of that game's \emph{Ke3}; cross-type roles: our \emph{b}c1 as their \emph{R}h8, our \emph{N}d7 as their \emph{P}a6; transferred move \texttt{e8d8} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0003\#1208} (ply 67) [structural distance $d$=38, QAP obj=5]: the master played \texttt{Kf7}; under $\mu$ our \emph{Ke1} plays the role of that game's \emph{Kg1}; cross-type roles: our \emph{N}d7 as their \emph{R}a8, our \emph{n}a7 as their \emph{P}h7; transferred move \texttt{e8d8} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0001\#2570} (ply 56) [structural distance $d$=39, QAP obj=4]: the master played \texttt{Kf2}; under $\mu$ our \emph{Ke1} plays the role of that game's \emph{Kg1}; cross-type roles: our \emph{b}c1 as their \emph{P}b2, our \emph{N}d7 as their \emph{P}g2; transferred move \texttt{e8d8} \textbf{(endorses this move)}. Synthesis: 6 retrieved analogs transferred to \texttt{Kd8} (summed QAP objective 25, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m57}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={3k2r1/Nppnp2p/6p1/p7/5P1P/2P5/PBn2PK1/7R b - - 6 30},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d7-c5}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={1r5k/2p4p/2p3p1/p7/2b5/P5N1/2P2PPP/3R2K1 w - - 0 28},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h2-h4}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={5k2/p1Nb1pp1/3P4/1p2r3/2p3p1/8/PPP3PP/3R2K1 w - - 4 29},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g1-f2}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2r3k1/1b4pp/4pp2/pp6/4P3/1P1N1PP1/P6P/3R2K1 w - - 1 26},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d3-e1}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 30, Black: \texttt{Nc5}.} (a) Our position; Melanie plays \texttt{Nc5} (\texttt{d7c5}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0001\#2268} (ply 54) [structural distance $d$=39, QAP obj=5]: the master played \texttt{h4}; under $\mu$ our \emph{Pc2} plays the role of that game's \emph{Ph2}; cross-type roles: our \emph{N}d7 as their \emph{P}c2, our \emph{n}a7 as their \emph{p}c6; transferred move \texttt{c7c5}. (c) Retrieved from \texttt{ccrl\_top\_p0001\#2570} (ply 56) [structural distance $d$=37, QAP obj=5]: the master played \texttt{Kf2}; under $\mu$ our \emph{Kd1} plays the role of that game's \emph{Kg1}; cross-type roles: our \emph{b}b2 as their \emph{P}b2, our \emph{N}d7 as their \emph{P}g2; transferred move \texttt{d8e8}. (d) Retrieved from \texttt{ccrl\_top\_p0002\#2123} (ply 50) [structural distance $d$=43, QAP obj=5]: the master played \texttt{Ne1}; under $\mu$ our \emph{Pa4} plays the role of that game's \emph{Nd3} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{n}a7 as their \emph{P}h2, our \emph{N}c2 as their \emph{P}b3; transferred move \texttt{a5a4}. Synthesis: no retrieved analog transferred to \texttt{Nc5} -- the \texttt{search} selector chose it on value (material / mate); panels (b)--(d) show the strongest nearby analogies.}
+\label{fig:thought-m59}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={3k2r1/Npp1p2p/6p1/p1n5/5P1P/2P5/P1n2PK1/2B4R b - - 8 31},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g8-f8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2r5/1bpk2pp/p4p2/7P/Pp6/1P2N3/1P3PP1/4R1K1 w - - 3 26},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e1-d1}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={5r1k/2p2ppp/1n6/1p6/1p1PN3/1P5P/5PP1/2R3K1 b - - 2 32},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f8-e8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={4r1k1/3n1p2/p2Ppp1p/8/PpP5/4B2P/5PP1/3R2K1 b - - 0 27},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e8-c8}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 31, Black: \texttt{Rf8}.} (a) Our position; Melanie plays \texttt{Rf8} (\texttt{g8f8}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0001\#3899} (ply 50) [structural distance $d$=37, QAP obj=5]: the master played \texttt{Rd1+}; under $\mu$ our \emph{Rg1} plays the role of that game's \emph{Re1}; cross-type roles: our \emph{P}e7 as their \emph{N}e3, our \emph{N}c5 as their \emph{P}a4; transferred move \texttt{g8f8} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0001\#290} (ply 63) [structural distance $d$=40, QAP obj=4]: the master played \texttt{Re8}; under $\mu$ our \emph{Rg1} plays the role of that game's \emph{Rf1}; cross-type roles: our \emph{n}a7 as their \emph{P}b4, our \emph{P}b7 as their \emph{n}e4; transferred move \texttt{g8f8} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0001\#2058} (ply 53) [structural distance $d$=32, QAP obj=4]: the master played \texttt{Rc8}; under $\mu$ our \emph{Rg1} plays the role of that game's \emph{Re1}; cross-type roles: our \emph{p}f4 as their \emph{N}d7, our \emph{b}c1 as their \emph{p}d6; transferred move \texttt{g8f8} \textbf{(endorses this move)}. Synthesis: 12 retrieved analogs transferred to \texttt{Rf8} (summed QAP objective 45, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m61}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={3k1r2/1pp1p2p/6p1/pNn5/5P1P/2P5/P1n2PK1/2B4R b - - 10 32},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d8-d7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={1k5r/pp3p1p/2p5/Pnb2N2/5P2/3KP3/5PBP/R7 w - - 5 27},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d3-c4}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={1k5r/pp3p1p/2p5/Pnb2N2/5P2/3KP3/5PBP/R7 w - - 4 27},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d3-c4}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={6k1/1r2bppp/2n1p3/8/2BPP3/2p3P1/2N2P1P/2R2K2 w - - 10 34},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f1-e2}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 32, Black: \texttt{Kd7}.} (a) Our position; Melanie plays \texttt{Kd7} (\texttt{d8d7}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0002\#1451} (ply 52) [structural distance $d$=41, QAP obj=35]: the master played \texttt{Kc4}; under $\mu$ our \emph{Kd1} plays the role of that game's \emph{Kd3}; cross-type roles: our \emph{N}c2 as their \emph{R}a1, our \emph{R}f8 as their \emph{B}g2; transferred move \texttt{d8d7} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0002\#2418} (ply 52) [structural distance $d$=41, QAP obj=35]: the master played \texttt{Kc4}; under $\mu$ our \emph{Kd1} plays the role of that game's \emph{Kd3}; cross-type roles: our \emph{N}c2 as their \emph{R}a1, our \emph{R}f8 as their \emph{B}g2; transferred move \texttt{d8d7} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0003\#177} (ply 66) [structural distance $d$=40, QAP obj=35]: the master played \texttt{Ke2}; under $\mu$ our \emph{Kd1} plays the role of that game's \emph{Kf1}; cross-type roles: our \emph{N}c5 as their \emph{R}c1, our \emph{R}f8 as their \emph{B}c4; transferred move \texttt{d8d7} \textbf{(endorses this move)}. Synthesis: 7 retrieved analogs transferred to \texttt{Kd7} (summed QAP objective 166, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m63}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={5r2/Nppkp2p/6p1/p1n5/5P1P/2P5/P1n2PK1/2B4R b - - 12 33},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c5-a6}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2r5/1bp3pp/p3kp2/7P/Pp6/1P2N3/1P3PP1/3R2K1 w - - 5 27},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d1-d2}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={4r1k1/3n1p2/p2Ppp1p/8/PpP5/4B2P/5PP1/3R2K1 b - - 0 27},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e8-c8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2r3k1/5pp1/p3pn1p/1pP4P/8/5P2/PP3BP1/1K5R b - - 2 27},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f6-d5}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 33, Black: \texttt{Na6}.} (a) Our position; Melanie plays \texttt{Na6} (\texttt{c5a6}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0001\#3899} (ply 52) [structural distance $d$=40, QAP obj=19]: the master played \texttt{Rd2}; under $\mu$ our \emph{Nc4} plays the role of that game's \emph{Rd1} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{N}c2 as their \emph{P}b2, our \emph{n}a7 as their \emph{P}f2; transferred move \texttt{c5a6} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0001\#2058} (ply 53) [structural distance $d$=45, QAP obj=18]: the master played \texttt{Rc8}; under $\mu$ our \emph{Nc4} plays the role of that game's \emph{Re1} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{b}c1 as their \emph{N}d7, our \emph{n}a7 as their \emph{P}f6; transferred move \texttt{c5a6} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0003\#2029} (ply 53) [structural distance $d$=44, QAP obj=15]: the master played \texttt{Nd5}; under $\mu$ our \emph{Nc4} plays the role of that game's \emph{Nf3}; cross-type roles: our \emph{n}a7 as their \emph{P}f7, our \emph{N}c2 as their \emph{p}b2; transferred move \texttt{c5a6} \textbf{(endorses this move)}. Synthesis: 5 retrieved analogs transferred to \texttt{Na6} (summed QAP objective 67, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m65}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={5r2/1ppkp2p/n5p1/pN6/5P1P/2P5/P1n2PK1/2B4R b - - 14 34},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c2-a1}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={5k2/p1b2pp1/3r2p1/1p1nN3/4R2P/6P1/PP1B1P2/5K2 w - - 8 34},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e4-d4}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/r1p2kpp/3npp2/8/3N1PP1/1PR5/4P2P/6K1 b - - 0 29},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d6-e4}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={1r4k1/5pp1/Rp2p3/7p/2P1P3/1P2N2P/1b3P2/6K1 w - - 2 27},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e3-c2}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 34, Black: \texttt{Na1}.} (a) Our position; Melanie plays \texttt{Na1} (\texttt{c2a1}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0002\#3831} (ply 66) [structural distance $d$=43, QAP obj=34]: the master played \texttt{Rd4}; under $\mu$ our \emph{Nc7} plays the role of that game's \emph{Re4} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{R}f8 as their \emph{P}a2, our \emph{P}a5 as their \emph{B}d2; transferred move \texttt{c2a1} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0001\#3376} (ply 57) [structural distance $d$=44, QAP obj=31]: the master played \texttt{Ne4}; under $\mu$ our \emph{Nc7} plays the role of that game's \emph{Nd3}; cross-type roles: our \emph{b}c1 as their \emph{R}a7, our \emph{N}a6 as their \emph{p}g4; transferred move \texttt{c2a1} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0000\#3572} (ply 52) [structural distance $d$=40, QAP obj=13]: the master played \texttt{Nc2}; under $\mu$ our \emph{Nc7} plays the role of that game's \emph{Ne3}; cross-type roles: our \emph{P}g6 as their \emph{b}b2, our \emph{R}f8 as their \emph{P}h3; transferred move \texttt{c2a1} \textbf{(endorses this move)}. Synthesis: 9 retrieved analogs transferred to \texttt{Na1} (summed QAP objective 105, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m67}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={5r2/1ppkp2p/n5p1/p7/3N1P1P/2P5/P4PK1/n1B4R b - - 16 35},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c7-c5}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2r5/1p2kp2/5np1/p3p2p/7P/2PR4/PP3PP1/3BK3 b - - 2 30},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c8-c5}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/1pp1r1kp/3p2p1/8/1nP2P2/1PN3PP/3R2K1/8 w - - 1 34},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g2-f2}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2nb3r/1R3p2/6k1/3pPp1p/2pP4/2P5/3B2PN/6K1 w - - 2 43},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h2-f3}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 35, Black: \texttt{c5}.} (a) Our position; Melanie plays \texttt{c5} (\texttt{c7c5}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0002\#3859} (ply 59) [structural distance $d$=43, QAP obj=26]: the master played \texttt{Rc5}; under $\mu$ our \emph{Rf1} plays the role of that game's \emph{Rc1}; cross-type roles: our \emph{N}a1 as their \emph{p}h4, our \emph{b}c1 as their \emph{r}d3; transferred move \texttt{f8f6}. (c) Retrieved from \texttt{ccrl\_top\_p0002\#2971} (ply 66) [structural distance $d$=44, QAP obj=23]: the master played \texttt{Kf2}; under $\mu$ our \emph{Kd2} plays the role of that game's \emph{Kg2}; cross-type roles: our \emph{P}b7 as their \emph{N}c3, our \emph{N}a6 as their \emph{P}g3; transferred move \texttt{d7e8}. (d) Retrieved from \texttt{ccrl\_top\_p0000\#2718} (ply 84) [structural distance $d$=43, QAP obj=22]: the master played \texttt{Nf3}; under $\mu$ our \emph{Na8} plays the role of that game's \emph{Nh2}; cross-type roles: our \emph{P}c7 as their \emph{B}d2, our \emph{b}c1 as their \emph{P}g2; transferred move \texttt{a1c2}. Synthesis: no retrieved analog transferred to \texttt{c5} -- the \texttt{search} selector chose it on value (material / mate); panels (b)--(d) show the strongest nearby analogies.}
+\label{fig:thought-m69}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={5r2/1p1kp2p/n5p1/pNp5/5P1P/2P5/P4PK1/n1B4R b - - 1 36},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f8-g8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2r3k1/p4ppp/8/3pPP2/6P1/nPp5/P4BKP/3R4 w - - 0 36},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d1-c1}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={1r6/2p2p1p/6p1/RPnk2P1/4p3/N3P3/5PKP/8 b - - 2 28},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b8-h8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/1r1nkpp1/7p/p2Pp3/P1B3PP/2R5/1PP5/2K5 b - - 0 32},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b7-c7}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 36, Black: \texttt{Rg8}.} (a) Our position; Melanie plays \texttt{Rg8} (\texttt{f8g8}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0001\#3330} (ply 70) [structural distance $d$=41, QAP obj=26]: the master played \texttt{Rc1}; under $\mu$ our \emph{Rf1} plays the role of that game's \emph{Rd1}; cross-type roles: our \emph{R}f8 as their \emph{B}f2, our \emph{p}h4 as their \emph{n}a3; transferred move \texttt{f8g8} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0003\#1512} (ply 55) [structural distance $d$=37, QAP obj=18]: the master played \texttt{Rh8}; under $\mu$ our \emph{Rf1} plays the role of that game's \emph{Rb1}; cross-type roles: our \emph{n}b5 as their \emph{P}g6, our \emph{b}c1 as their \emph{n}a3; transferred move \texttt{f8g8} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0000\#2373} (ply 63) [structural distance $d$=36, QAP obj=18]: the master played \texttt{Rc7}; under $\mu$ our \emph{Rf1} plays the role of that game's \emph{Rb2}; cross-type roles: our \emph{P}b7 as their \emph{N}d7, our \emph{N}a1 as their \emph{P}a5; transferred move \texttt{f8g8} \textbf{(endorses this move)}. Synthesis: 5 retrieved analogs transferred to \texttt{Rg8} (summed QAP objective 80, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m71}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={6r1/1p1kp2p/n5p1/pNp5/5P1P/2P2P2/P5K1/n1B4R b - - 0 37},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d7-e8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={5k2/p1Nb1pp1/3P4/1p2r3/2p3p1/8/PPP3PP/3R2K1 w - - 4 29},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g1-f2}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={5r2/2p2pk1/1p6/5np1/p6p/2P2P2/PP1NRKPP/8 b - - 1 33},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g7-g6}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={1r3k2/5p2/1p2p1p1/3nP1Pp/P3p3/1P6/3B1PP1/2R2K2 b - - 4 42},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f8-e8}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 37, Black: \texttt{Ke8}.} (a) Our position; Melanie plays \texttt{Ke8} (\texttt{d7e8}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0001\#2570} (ply 56) [structural distance $d$=40, QAP obj=3]: the master played \texttt{Kf2}; under $\mu$ our \emph{Kd2} plays the role of that game's \emph{Kg1}; cross-type roles: our \emph{R}g8 as their \emph{P}a2, our \emph{N}a6 as their \emph{P}b2; transferred move \texttt{d7e8} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0001\#663} (ply 65) [structural distance $d$=40, QAP obj=3]: the master played \texttt{Kg6}; under $\mu$ our \emph{Kd2} plays the role of that game's \emph{Kg2}; cross-type roles: our \emph{N}a1 as their \emph{P}f7, our \emph{n}b5 as their \emph{P}b6; transferred move \texttt{d7e8} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0001\#1036} (ply 83) [structural distance $d$=43, QAP obj=3]: the master played \texttt{Ke8}; under $\mu$ our \emph{Kd2} plays the role of that game's \emph{Kf1}; cross-type roles: our \emph{N}a1 as their \emph{P}b6, our \emph{r}h1 as their \emph{p}a4; transferred move \texttt{d7e8} \textbf{(endorses this move)}. Synthesis: 5 retrieved analogs transferred to \texttt{Ke8} (summed QAP objective 14, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m73}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={4k1r1/1p2p2p/n5p1/pNp5/5P1P/2P2P2/P5K1/n1BR4 b - - 2 38},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g8-g7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={5r1k/2p2ppp/1n6/1p6/1p1PN3/1P5P/5PP1/2R3K1 b - - 2 32},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f8-e8}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/p1k3rp/2n1p1p1/2p2p2/2P2P1P/P2R4/3P1KPN/8 b - - 4 37},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g7-g8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={3k4/r4p2/1pP1p3/6p1/1P1bP2p/3N1P1P/2R1K3/8 w - - 1 39},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c2-c4}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 38, Black: \texttt{Rg7}.} (a) Our position; Melanie plays \texttt{Rg7} (\texttt{g8g7}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0001\#290} (ply 63) [structural distance $d$=32, QAP obj=5]: the master played \texttt{Re8}; under $\mu$ our \emph{Rg1} plays the role of that game's \emph{Rf1}; cross-type roles: our \emph{r}d1 as their \emph{P}g7, our \emph{p}f4 as their \emph{n}e4; transferred move \texttt{g8g7} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0001\#1071} (ply 73) [structural distance $d$=26, QAP obj=5]: the master played \texttt{Rg8}; under $\mu$ our \emph{Rg1} plays the role of that game's \emph{Rg2}; cross-type roles: our \emph{p}a2 as their \emph{N}c6, our \emph{n}b5 as their \emph{p}c4; transferred move \texttt{g8g7} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0000\#3572} (ply 76) [structural distance $d$=43, QAP obj=5]: the master played \texttt{Rc4}; under $\mu$ our \emph{Rg1} plays the role of that game's \emph{Rc2}; cross-type roles: our \emph{r}d1 as their \emph{b}d4, our \emph{n}b5 as their \emph{p}b6; transferred move \texttt{g8g7} \textbf{(endorses this move)}. Synthesis: 10 retrieved analogs transferred to \texttt{Rg7} (summed QAP objective 42, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m75}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={4k3/1p2p1rp/n5p1/pNp5/5P1P/2P2P2/P7/n1BR1K2 b - - 4 39},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e8-f8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={6k1/r5p1/5b1p/2pnpP1P/1pN5/6P1/1PB2P2/2R3K1 b - - 0 35},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g8-f8}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/3R2b1/p1r2p2/6pk/P1p2p2/2P1nP2/1P5N/1KR5 b - - 2 45},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h5-g6}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={6k1/r5p1/2R1p2p/p2n3P/Pp6/8/1P2BPP1/6K1 b - - 1 35},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g8-f8}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 39, Black: \texttt{Kf8}.} (a) Our position; Melanie plays \texttt{Kf8} (\texttt{e8f8}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0002\#3786} (ply 69) [structural distance $d$=51, QAP obj=6]: the master played \texttt{Kf8}; under $\mu$ our \emph{Ke1} plays the role of that game's \emph{Kg1}; cross-type roles: our \emph{p}a2 as their \emph{R}a7, our \emph{P}c5 as their \emph{B}f6; transferred move \texttt{e8f8} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0001\#3556} (ply 89) [structural distance $d$=47, QAP obj=5]: the master played \texttt{Kg6}; under $\mu$ our \emph{Ke1} plays the role of that game's \emph{Kh4}; cross-type roles: our \emph{n}b5 as their \emph{r}d7, our \emph{P}b7 as their \emph{B}g7; transferred move \texttt{e8f8} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0003\#76} (ply 69) [structural distance $d$=47, QAP obj=5]: the master played \texttt{Kf8}; under $\mu$ our \emph{Ke1} plays the role of that game's \emph{Kg1}; cross-type roles: our \emph{n}b5 as their \emph{r}c6, our \emph{N}a1 as their \emph{p}a4; transferred move \texttt{e8f8} \textbf{(endorses this move)}. Synthesis: 4 retrieved analogs transferred to \texttt{Kf8} (summed QAP objective 19, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m77}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={5k2/1p2p1rp/n5p1/pNp5/5P1P/2P2P2/P2R4/n1B2K2 b - - 6 40},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g7-f7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/ppr2pk1/2p3p1/2n5/6PP/P1P5/1P2BK2/3R4 b - - 0 45},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c7-e7}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2r5/r4ppk/3Rp3/7p/p4P1P/Pn2N1P1/4RPK1/8 w - - 2 32},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e2-c2}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={5k2/1pn1r2p/p1p1p1p1/4P1P1/4P2P/1P2K3/1P1R4/5B2 b - - 0 35},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e7-f7}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 40, Black: \texttt{Rf7}.} (a) Our position; Melanie plays \texttt{Rf7} (\texttt{g7f7}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0000\#2969} (ply 89) [structural distance $d$=52, QAP obj=5]: the master played \texttt{Re7}; under $\mu$ our \emph{Rg2} plays the role of that game's \emph{Rc2}; cross-type roles: our \emph{N}a6 as their \emph{P}f7, our \emph{N}a1 as their \emph{P}c6; transferred move \texttt{g7f7} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0003\#2446} (ply 62) [structural distance $d$=50, QAP obj=4]: the master played \texttt{Rc2}; under $\mu$ our \emph{Rg2} plays the role of that game's \emph{Re2}; cross-type roles: our \emph{P}a5 as their \emph{n}b3, our \emph{r}d2 as their \emph{N}e3; transferred move \texttt{g7f7} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0002\#2257} (ply 69) [structural distance $d$=48, QAP obj=7]: the master played \texttt{Rf7}; under $\mu$ our \emph{Rg2} plays the role of that game's \emph{Re2}; cross-type roles: our \emph{n}b5 as their \emph{P}c6, our \emph{N}a1 as their \emph{p}e4; transferred move \texttt{g7g8}. Synthesis: 2 retrieved analogs transferred to \texttt{Rf7} (summed QAP objective 9, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m79}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={5k2/1p2pr1p/n5p1/pNp5/5P1P/2P2P2/PB1R4/n4K2 b - - 8 41},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f7-f4}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={5k2/1p2r1pp/1pnR1p2/pB6/P3P3/2P5/1P3KPP/8 b - - 3 33},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e7-e4}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/1p1r1pk1/2p1n1p1/p7/4R1PP/P1P5/1PB2K2/8 b - - 5 49},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d7-d2}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={1r6/4k1p1/p3pp1p/1pPn3P/P7/5P2/1PK3P1/R3B3 b - - 12 36},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b8-c8}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 41, Black: \texttt{Rxf4}.} (a) Our position; Melanie plays \texttt{Rxf4} (\texttt{f7f4}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0002\#2633} (ply 65) [structural distance $d$=50, QAP obj=38]: the master played \texttt{Rxe4}; under $\mu$ our \emph{Rf2} plays the role of that game's \emph{Re2}; cross-type roles: our \emph{n}b5 as their \emph{P}b7, our \emph{b}b2 as their \emph{r}d6; transferred move \texttt{f7f4} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0000\#2969} (ply 97) [structural distance $d$=44, QAP obj=13]: the master played \texttt{Rd2+}; under $\mu$ our \emph{Rf2} plays the role of that game's \emph{Rd2}; cross-type roles: our \emph{N}a6 as their \emph{P}c6, our \emph{b}b2 as their \emph{r}e4; transferred move \texttt{f7f4} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0003\#2029} (ply 71) [structural distance $d$=48, QAP obj=12]: the master played \texttt{Rc8}; under $\mu$ our \emph{Rf2} plays the role of that game's \emph{Rb1}; cross-type roles: our \emph{n}b5 as their \emph{P}f6, our \emph{N}a1 as their \emph{P}b5; transferred move \texttt{f7f4} \textbf{(endorses this move)}. Synthesis: 4 retrieved analogs transferred to \texttt{Rxf4} (summed QAP objective 69, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m81}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={5k2/1p2p2p/n5p1/pNp5/5r1P/2P2P2/P2R4/B4K2 b - - 0 42},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f8-f7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={4r3/4P1p1/2p1R1Np/p2n4/2kp4/P6P/2P3P1/6K1 b - - 3 38},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c4-c3}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={3r4/3P3R/1p3k1p/p4p1P/Pnp5/5B2/1P4K1/8 b - - 2 46},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f6-e5}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2r5/1RP2p2/6nk/1p2p3/1Pp1P1P1/2P5/6K1/3B4 b - - 1 50},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h6-g5}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 42, Black: \texttt{Kf7}.} (a) Our position; Melanie plays \texttt{Kf7} (\texttt{f8f7}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0000\#537} (ply 75) [structural distance $d$=41, QAP obj=48]: the master played \texttt{Kc3}; under $\mu$ our \emph{Kf1} plays the role of that game's \emph{Kc5}; cross-type roles: our \emph{p}c3 as their \emph{n}g6, our \emph{n}b5 as their \emph{P}h6; transferred move \texttt{f8f7} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0000\#1497} (ply 91) [structural distance $d$=40, QAP obj=29]: the master played \texttt{Ke5}; under $\mu$ our \emph{Kf1} plays the role of that game's \emph{Kf3}; cross-type roles: our \emph{N}a6 as their \emph{P}a5, our \emph{r}d2 as their \emph{p}h5; transferred move \texttt{f8f7} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0001\#330} (ply 99) [structural distance $d$=35, QAP obj=24]: the master played \texttt{Kg5}; under $\mu$ our \emph{Kf1} plays the role of that game's \emph{Kh3}; cross-type roles: our \emph{n}b5 as their \emph{b}d1; transferred move \texttt{f8f7} \textbf{(endorses this move)}. Synthesis: 5 retrieved analogs transferred to \texttt{Kf7} (summed QAP objective 126, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m83}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/1p2pk1p/n5p1/pNp5/5r1P/2P2P2/P2R4/B5K1 b - - 2 43},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f4-h4}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={6k1/b1p2pp1/P3p3/2p1P3/R6p/5P2/1r2B1PP/4K3 b - - 1 38},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b2-b1}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/4kp2/p3p3/2p1P2R/P6p/2r1NP2/1n2K1PP/8 w - - 0 49},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h5-h4}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/3r4/p2n2kp/P2P4/2p2RP1/1p2N3/1P4KP/8 w - - 0 39},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e3-d1}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 43, Black: \texttt{Rxh4}.} (a) Our position; Melanie plays \texttt{Rxh4} (\texttt{f4h4}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0000\#312} (ply 75) [structural distance $d$=40, QAP obj=19]: the master played \texttt{Rb1+}; under $\mu$ our \emph{Rf5} plays the role of that game's \emph{Rb7}; cross-type roles: our \emph{p}c3 as their \emph{B}a7, our \emph{N}a6 as their \emph{P}e6; transferred move \texttt{f4h4} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0002\#709} (ply 96) [structural distance $d$=38, QAP obj=16]: the master played \texttt{Rxh4}; under $\mu$ our \emph{Rf5} plays the role of that game's \emph{Rh5}; cross-type roles: our \emph{b}a1 as their \emph{n}b2, our \emph{p}f3 as their \emph{N}e3; transferred move \texttt{f4h4} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0003\#527} (ply 76) [structural distance $d$=41, QAP obj=15]: the master played \texttt{Nd1}; under $\mu$ our \emph{Rf5} plays the role of that game's \emph{Ne3} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{N}a6 as their \emph{p}a6, our \emph{p}f3 as their \emph{n}d6; transferred move \texttt{f4h4} \textbf{(endorses this move)}. Synthesis: 6 retrieved analogs transferred to \texttt{Rxh4} (summed QAP objective 83, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m85}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/1p2pk1p/n5p1/pNp5/7r/2P2P2/P2R1K2/B7 b - - 1 44},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c5-c4}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2r3k1/5p1p/1p1b2p1/3Pp3/R7/3NP1PP/5PK1/8 w - - 2 36},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d3-b2}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2r3k1/7p/5p2/3p1P2/1p1P4/6P1/n3N1KP/1R6 w - - 2 48},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e2-f4}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={4nk2/p1r2p2/1p4p1/6Pp/8/1N4PP/PP1R2K1/8 b - - 2 45},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e8-g7}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 44, Black: \texttt{c4}.} (a) Our position; Melanie plays \texttt{c4} (\texttt{c5c4}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0002\#2876} (ply 70) [structural distance $d$=33, QAP obj=3]: the master played \texttt{Nb2}; under $\mu$ our \emph{Pc4} plays the role of that game's \emph{Nd3} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{N}a6 as their \emph{P}g3, our \emph{n}b5 as their \emph{b}d6; transferred move \texttt{c5c4} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0001\#469} (ply 94) [structural distance $d$=37, QAP obj=3]: the master played \texttt{Nf4}; under $\mu$ our \emph{Pc4} plays the role of that game's \emph{Ne2} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{P}a5 as their \emph{R}b1, our \emph{p}c3 as their \emph{n}a2; transferred move \texttt{c5c4} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0000\#3167} (ply 89) [structural distance $d$=30, QAP obj=2]: the master played \texttt{Ng7}; under $\mu$ our \emph{Pc4} plays the role of that game's \emph{Ne1} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{P}g6 as their \emph{R}c7, our \emph{n}b5 as their \emph{P}f7; transferred move \texttt{c5c4} \textbf{(endorses this move)}. Synthesis: 5 retrieved analogs transferred to \texttt{c4} (summed QAP objective 12, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m87}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/1p2pk1p/n5p1/pN6/2p4r/2P2P2/PB1R1K2/8 b - - 1 45},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h7-h6}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={3r2k1/5pp1/7p/3pP2P/3P2b1/4R1P1/1B3P2/6K1 w - - 1 42},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f2-f3}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/5rpk/p1N2n2/2p4p/2P5/P2R2P1/6KP/8 w - - 2 41},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h2-h3}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/pp6/2nr2pk/7p/7P/1B4P1/PP2R1K1/8 b - - 4 37},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b7-b5}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 45, Black: \texttt{h6}.} (a) Our position; Melanie plays \texttt{h6} (\texttt{h7h6}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0002\#684} (ply 82) [structural distance $d$=38, QAP obj=5]: the master played \texttt{f3}; under $\mu$ our \emph{Ph2} plays the role of that game's \emph{Pf2}; cross-type roles: our \emph{P}g6 as their \emph{R}e3, our \emph{n}b5 as their \emph{b}g4; transferred move \texttt{h7h6} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0002\#1155} (ply 80) [structural distance $d$=28, QAP obj=4]: the master played \texttt{h3}; under $\mu$ our \emph{Ph2} plays the role of that game's \emph{Ph2}; cross-type roles: our \emph{b}b2 as their \emph{p}h5, our \emph{r}d2 as their \emph{n}f6; transferred move \texttt{h7h6} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0000\#629} (ply 73) [structural distance $d$=30, QAP obj=3]: the master played \texttt{b5}; under $\mu$ our \emph{Ph2} plays the role of that game's \emph{Pb2}; cross-type roles: our \emph{P}g6 as their \emph{N}c6, our \emph{n}b5 as their \emph{P}h5; transferred move \texttt{h7h6} \textbf{(endorses this move)}. Synthesis: 5 retrieved analogs transferred to \texttt{h6} (summed QAP objective 17, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m89}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/1p2pk2/n5pp/pN6/2p4r/2P2PK1/PB1R4/8 b - - 1 46},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h4-h5}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={6k1/6p1/P7/2r2p1p/7P/6P1/1p2PPK1/R7 w - - 0 42},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={a1-b1}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={6k1/5pp1/8/2n4p/pb5P/2R3P1/P4PK1/8 w - - 4 40},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c3-c4}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={5k2/2r2pp1/4p3/pN6/Pn3P2/4K1P1/1P1R4/8 b - - 10 44},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c7-c8}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 46, Black: \texttt{Rh5}.} (a) Our position; Melanie plays \texttt{Rh5} (\texttt{h4h5}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0002\#1950} (ply 82) [structural distance $d$=40, QAP obj=20]: the master played \texttt{Rb1}; under $\mu$ our \emph{Rh5} plays the role of that game's \emph{Ra1}; cross-type roles: our \emph{k}g3 as their \emph{p}b2, our \emph{b}b2 as their \emph{p}f5; transferred move \texttt{h4h5} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0000\#2678} (ply 78) [structural distance $d$=40, QAP obj=18]: the master played \texttt{Rc4}; under $\mu$ our \emph{Rh5} plays the role of that game's \emph{Rc3}; cross-type roles: our \emph{k}g3 as their \emph{b}b4, our \emph{b}b2 as their \emph{P}h4; transferred move \texttt{h4h5} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0002\#1013} (ply 87) [structural distance $d$=39, QAP obj=7]: the master played \texttt{Rc8}; under $\mu$ our \emph{Rh5} plays the role of that game's \emph{Rc2}; cross-type roles: our \emph{k}g3 as their \emph{n}b5, our \emph{P}c4 as their \emph{r}d2; transferred move \texttt{h4h5} \textbf{(endorses this move)}. Synthesis: 8 retrieved analogs transferred to \texttt{Rh5} (summed QAP objective 59, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m91}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/1p2pk2/n5pp/pN5r/P1p5/2P2PK1/1B1R4/8 b - - 0 47},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f7-g7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/5k1p/4rp2/N5p1/1p6/1P1r2P1/2R2B1P/5K2 b - - 0 39},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f7-g6}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={3k4/3n1p2/2RN4/p3p2p/4P1pP/r5P1/5P2/6K1 b - - 7 44},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d8-e7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={5bk1/p3r2p/2R2pp1/8/1pN5/6P1/PP3P1P/5K2 b - - 3 40},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g8-f7}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 47, Black: \texttt{Kg7}.} (a) Our position; Melanie plays \texttt{Kg7} (\texttt{f7g7}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0002\#400} (ply 77) [structural distance $d$=33, QAP obj=29]: the master played \texttt{Kg6}; under $\mu$ our \emph{Kf2} plays the role of that game's \emph{Kf2}; cross-type roles: our \emph{p}c3 as their \emph{R}e6, our \emph{n}b5 as their \emph{p}b3; transferred move \texttt{f7g7} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0003\#133} (ply 87) [structural distance $d$=37, QAP obj=21]: the master played \texttt{Ke7}; under $\mu$ our \emph{Kf2} plays the role of that game's \emph{Kd1}; cross-type roles: our \emph{r}d2 as their \emph{N}d7, our \emph{n}b5 as their \emph{P}f7; transferred move \texttt{f7g7} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0003\#2723} (ply 79) [structural distance $d$=35, QAP obj=16]: the master played \texttt{Kf7}; under $\mu$ our \emph{Kf2} plays the role of that game's \emph{Kg1}; cross-type roles: our \emph{r}d2 as their \emph{B}f8, our \emph{b}b2 as their \emph{R}e7; transferred move \texttt{f7g7} \textbf{(endorses this move)}. Synthesis: 8 retrieved analogs transferred to \texttt{Kg7} (summed QAP objective 112, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m93}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/1p2p1k1/n5pp/pN5r/P1p5/2P2PK1/3R4/B7 b - - 2 48},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g7-g8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2r3k1/1p5p/p3p3/P7/1B1Np1P1/1P5P/8/5K2 b - - 2 44},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g8-f7}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={3k4/3n1p2/2RN4/p3p2p/4P1pP/r5P1/5P2/6K1 b - - 7 44},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d8-e7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/6r1/2P3p1/p1P1k3/2B1p2p/2R3bP/P5P1/6K1 w - - 8 48},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g1-f1}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 48, Black: \texttt{Kg8}.} (a) Our position; Melanie plays \texttt{Kg8} (\texttt{g7g8}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0001\#3645} (ply 87) [structural distance $d$=37, QAP obj=23]: the master played \texttt{Kf7}; under $\mu$ our \emph{Kg2} plays the role of that game's \emph{Kg1}; cross-type roles: our \emph{n}b5 as their \emph{P}e6, our \emph{P}c4 as their \emph{b}b4; transferred move \texttt{g7g8} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0003\#133} (ply 87) [structural distance $d$=37, QAP obj=21]: the master played \texttt{Ke7}; under $\mu$ our \emph{Kg2} plays the role of that game's \emph{Kd1}; cross-type roles: our \emph{P}b7 as their \emph{N}d7, our \emph{n}b5 as their \emph{P}f7; transferred move \texttt{g7g8} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0001\#1133} (ply 94) [structural distance $d$=38, QAP obj=17]: the master played \texttt{Kf1}; under $\mu$ our \emph{Kg2} plays the role of that game's \emph{Kg1}; cross-type roles: our \emph{N}a6 as their \emph{P}a2, our \emph{n}b5 as their \emph{b}g3; transferred move \texttt{g7g8} \textbf{(endorses this move)}. Synthesis: 13 retrieved analogs transferred to \texttt{Kg8} (summed QAP objective 159, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m95}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={6k1/1p2p3/n5pp/pN5r/P1p5/2P2PK1/1B1R4/8 b - - 4 49},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h5-c5}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/5p1k/2N1p3/5p1p/4nP1r/PP1R4/K1P5/8 b - - 3 54},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h4-f4}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={6k1/1p2r3/2pNb1p1/p3P1P1/Pn2R3/6K1/1P6/5B2 w - - 5 41},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d6-c4}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/2n1k3/p1p3p1/P6p/1P2N2r/2P2P2/1K6/4R3 b - - 0 42},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h4-f4}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 49, Black: \texttt{Rc5}.} (a) Our position; Melanie plays \texttt{Rc5} (\texttt{h5c5}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0000\#2452} (ply 107) [structural distance $d$=38, QAP obj=25]: the master played \texttt{Rxf4}; under $\mu$ our \emph{Rh4} plays the role of that game's \emph{Rh5}; cross-type roles: our \emph{r}d2 as their \emph{n}c6, our \emph{N}a6 as their \emph{P}e6; transferred move \texttt{h5c5} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0001\#876} (ply 80) [structural distance $d$=34, QAP obj=19]: the master played \texttt{Nc4}; under $\mu$ our \emph{Rh4} plays the role of that game's \emph{Nd6} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{N}a6 as their \emph{B}f1, our \emph{r}d2 as their \emph{b}e6; transferred move \texttt{h5c5} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0003\#106} (ply 83) [structural distance $d$=39, QAP obj=16]: the master played \texttt{Rf4}; under $\mu$ our \emph{Rh4} plays the role of that game's \emph{Rh5}; cross-type roles: our \emph{P}b7 as their \emph{N}c7, our \emph{r}d2 as their \emph{P}a6; transferred move \texttt{h5c5} \textbf{(endorses this move)}. Synthesis: 9 retrieved analogs transferred to \texttt{Rc5} (summed QAP objective 114, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m97}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={6k1/1p2p3/n5pp/pNr5/P1p2K2/2P2P2/1B1R4/8 b - - 6 50},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g8-g7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={4k3/7R/3p2rn/2pPp1Np/7P/3K2P1/1P6/8 w - - 14 50},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d3-e4}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/r7/3p1k1p/PRn3pP/4p3/4N1P1/5P2/6K1 w - - 5 43},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g1-f1}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2n5/8/1p3p2/3p1k1p/PR1P4/2rN1PP1/8/4K3 w - - 8 51},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e1-e2}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 50, Black: \texttt{Kg7}.} (a) Our position; Melanie plays \texttt{Kg7} (\texttt{g8g7}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0002\#2290} (ply 98) [structural distance $d$=43, QAP obj=40]: the master played \texttt{Ke4}; under $\mu$ our \emph{Kg1} plays the role of that game's \emph{Kd3}; cross-type roles: our \emph{b}b2 as their \emph{p}c5, our \emph{N}a6 as their \emph{P}d5; transferred move \texttt{g8g7} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0002\#3970} (ply 84) [structural distance $d$=40, QAP obj=26]: the master played \texttt{Kf1}; under $\mu$ our \emph{Kg1} plays the role of that game's \emph{Kg1}; cross-type roles: our \emph{b}b2 as their \emph{r}a7; transferred move \texttt{g8g7} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0000\#3060} (ply 100) [structural distance $d$=44, QAP obj=24]: the master played \texttt{Ke2}; under $\mu$ our \emph{Kg1} plays the role of that game's \emph{Ke1}; cross-type roles: our \emph{r}d2 as their \emph{P}a4, our \emph{b}b2 as their \emph{R}b4; transferred move \texttt{g8g7} \textbf{(endorses this move)}. Synthesis: 11 retrieved analogs transferred to \texttt{Kg7} (summed QAP objective 145, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m99}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/1p2p1k1/n5pp/p1r5/P1p2K2/N1P2P2/1B1R4/8 b - - 8 51},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c5-c6}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/2B2pkp/5n2/2p2P2/r6p/3p4/6P1/4RBK1 b - - 0 48},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={a4-e4}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={1r6/5pk1/p2p3p/3P3p/PbN5/1p1BR3/5PK1/8 b - - 5 43},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b4-c5}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={3r4/5pk1/6p1/1p2r3/1P2p1PP/p3N3/P1B1K3/7R b - - 2 43},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e5-e6}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 51, Black: \texttt{Rc6}.} (a) Our position; Melanie plays \texttt{Rc6} (\texttt{c5c6}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0002\#3556} (ply 95) [structural distance $d$=42, QAP obj=23]: the master played \texttt{Re4}; under $\mu$ our \emph{Rc4} plays the role of that game's \emph{Ra5}; cross-type roles: our \emph{N}a6 as their \emph{b}c7, our \emph{P}h6 as their \emph{N}f6; transferred move \texttt{c5c6} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0002\#987} (ply 85) [structural distance $d$=45, QAP obj=22]: the master played \texttt{Bc5}; under $\mu$ our \emph{Rc4} plays the role of that game's \emph{Bb5} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{p}f3 as their \emph{R}b8, our \emph{N}a6 as their \emph{P}a6; transferred move \texttt{c5c6} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0002\#879} (ply 85) [structural distance $d$=42, QAP obj=22]: the master played \texttt{Re6}; under $\mu$ our \emph{Rc4} plays the role of that game's \emph{Re4}; cross-type roles: our \emph{N}a6 as their \emph{R}d8, our \emph{r}d2 as their \emph{p}h4; transferred move \texttt{c5c6} \textbf{(endorses this move)}. Synthesis: 7 retrieved analogs transferred to \texttt{Rc6} (summed QAP objective 105, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m101}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/1p2p1k1/n1r3pp/pN6/P1p2K2/2P2P2/1B1R4/8 b - - 10 52},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b7-b6}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={4n3/p3rpk1/6pp/8/P1R2PPP/5B2/5K2/8 b - - 16 56},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e8-d6}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/3r1kpp/4pp2/8/3n1PPP/4N3/R4PK1/8 b - - 0 47},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h7-h6}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={3r2k1/5pp1/7p/3pPb2/3P4/B3RPP1/6K1/8 w - - 4 45},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g3-g4}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 52, Black: \texttt{b6}.} (a) Our position; Melanie plays \texttt{b6} (\texttt{b7b6}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0000\#1030} (ply 111) [structural distance $d$=44, QAP obj=3]: the master played \texttt{Nd6}; under $\mu$ our \emph{Pb2} plays the role of that game's \emph{Ne1} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{N}a6 as their \emph{P}a7, our \emph{b}b2 as their \emph{R}e7; transferred move \texttt{b7b6} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0002\#3347} (ply 93) [structural distance $d$=38, QAP obj=3]: the master played \texttt{h6}; under $\mu$ our \emph{Pb2} plays the role of that game's \emph{Ph2}; cross-type roles: our \emph{n}b5 as their \emph{P}g7, our \emph{r}d2 as their \emph{N}d4; transferred move \texttt{b7b6} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0002\#684} (ply 88) [structural distance $d$=44, QAP obj=3]: the master played \texttt{g4}; under $\mu$ our \emph{Pb2} plays the role of that game's \emph{Pg3}; cross-type roles: our \emph{P}g6 as their \emph{B}a3, our \emph{N}a6 as their \emph{P}d4; transferred move \texttt{b7b6} \textbf{(endorses this move)}. Synthesis: 9 retrieved analogs transferred to \texttt{b6} (summed QAP objective 25, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m103}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/4p1k1/npr3pp/pN6/P1p2K2/2P2P2/3R4/B7 b - - 1 53},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g7-g8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/p2k1p2/1p2p1p1/1P2P3/P3R2P/8/1KP4P/5r2 w - - 11 57},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b2-c3}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={6k1/4r3/3p1pp1/P1pn3p/7P/2P3P1/R2B1PK1/8 w - - 6 59},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g2-f3}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/2R3k1/1p3r1p/3bN1p1/P2Ppp2/7P/5PP1/6K1 b - - 1 50},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g7-g8}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 53, Black: \texttt{Kg8}.} (a) Our position; Melanie plays \texttt{Kg8} (\texttt{g7g8}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0001\#322} (ply 112) [structural distance $d$=40, QAP obj=4]: the master played \texttt{Kc3}; under $\mu$ our \emph{Kg2} plays the role of that game's \emph{Kb2}; cross-type roles: our \emph{b}a1 as their \emph{r}f1, our \emph{N}a6 as their \emph{P}h2; transferred move \texttt{g7g8} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0000\#839} (ply 116) [structural distance $d$=46, QAP obj=4]: the master played \texttt{Kf3}; under $\mu$ our \emph{Kg2} plays the role of that game's \emph{Kg2}; cross-type roles: our \emph{N}a6 as their \emph{B}d2, our \emph{r}d2 as their \emph{P}c3; transferred move \texttt{g7g8} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0000\#3596} (ply 99) [structural distance $d$=37, QAP obj=3]: the master played \texttt{Kg8}; under $\mu$ our \emph{Kg2} plays the role of that game's \emph{Kg2}; cross-type roles: our \emph{b}a1 as their \emph{r}c7, our \emph{N}a6 as their \emph{P}h6; transferred move \texttt{g7g8} \textbf{(endorses this move)}. Synthesis: 9 retrieved analogs transferred to \texttt{Kg8} (summed QAP objective 30, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m105}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={6k1/4p3/npr3pp/pN6/P1p2K2/2P2P2/1B1R4/8 b - - 3 54},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g8-g7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/p2k1p2/1p2p1p1/1P2P3/P3R2P/8/1KP4P/5r2 w - - 11 57},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b2-c3}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2r5/p5p1/3B1p2/1P3k1p/P3p2P/3bP3/6PK/R7 w - - 2 52},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h2-h3}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={r7/1p4k1/2p5/2P2R1B/3PnP2/p3P2p/2K4P/8 w - - 1 46},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c2-b1}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 54, Black: \texttt{Kg7}.} (a) Our position; Melanie plays \texttt{Kg7} (\texttt{g8g7}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0001\#322} (ply 112) [structural distance $d$=44, QAP obj=4]: the master played \texttt{Kc3}; under $\mu$ our \emph{Kg1} plays the role of that game's \emph{Kb2}; cross-type roles: our \emph{N}a6 as their \emph{P}h2, our \emph{n}b5 as their \emph{p}b6; transferred move \texttt{g8g7} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0003\#2144} (ply 102) [structural distance $d$=45, QAP obj=4]: the master played \texttt{Kh3}; under $\mu$ our \emph{Kg1} plays the role of that game's \emph{Kh2}; cross-type roles: our \emph{N}a6 as their \emph{R}a1, our \emph{n}b5 as their \emph{P}g2; transferred move \texttt{g8g7} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0000\#2378} (ply 90) [structural distance $d$=40, QAP obj=4]: the master played \texttt{Kb1}; under $\mu$ our \emph{Kg1} plays the role of that game's \emph{Kc2}; cross-type roles: our \emph{n}b5 as their \emph{P}h2, our \emph{b}b2 as their \emph{p}a3; transferred move \texttt{g8g7} \textbf{(endorses this move)}. Synthesis: 11 retrieved analogs transferred to \texttt{Kg7} (summed QAP objective 33, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m107}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/4p1k1/npr3pp/pN6/P1p2K2/2P2P2/3R4/B7 b - - 5 55},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g6-g5}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/5R2/6pk/4p2p/4P3/2Pn1P1P/3rN1P1/5K2 w - - 1 52},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g2-g3}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/8/6pb/p1Nr1k1p/7P/6P1/P3RPK1/8 w - - 4 49},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c5-e4}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={7r/1N6/1n3p2/1P1kpp2/p7/5PPp/P1R2K1P/8 w - - 1 52},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={c2-c6}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 55, Black: \texttt{g5+}.} (a) Our position; Melanie plays \texttt{g5+} (\texttt{g6g5}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0000\#3409} (ply 102) [structural distance $d$=48, QAP obj=6]: the master played \texttt{g3}; under $\mu$ our \emph{Pg3} plays the role of that game's \emph{Pg2}; cross-type roles: our \emph{p}a4 as their \emph{r}d2, our \emph{P}a5 as their \emph{N}e2; transferred move \texttt{g6g5} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0001\#3435} (ply 96) [structural distance $d$=47, QAP obj=4]: the master played \texttt{Ne4}; under $\mu$ our \emph{Pg3} plays the role of that game's \emph{Nc5} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{b}a1 as their \emph{R}e2, our \emph{N}a6 as their \emph{p}a5; transferred move \texttt{g6g5} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0001\#3151} (ply 102) [structural distance $d$=35, QAP obj=4]: the master played \texttt{Rc6}; under $\mu$ our \emph{Pg3} plays the role of that game's \emph{Rc2} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{n}b5 as their \emph{P}g3, our \emph{b}a1 as their \emph{p}h3; transferred move \texttt{g6g5} \textbf{(endorses this move)}. Synthesis: 9 retrieved analogs transferred to \texttt{g5+} (summed QAP objective 33, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m109}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/4p1k1/npr4p/pN4p1/P1p5/2P2PK1/3R4/B7 b - - 1 56},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g7-g8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/p2k1p2/1p2p1p1/1P2P3/P3R2P/K7/2P4P/r7 w - - 9 56},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={a3-b2}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={2R2k2/r4p2/4p3/1B1p2p1/6Pp/7P/5PK1/8 b - - 23 49},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f8-g7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/5p1k/1p2r2p/6p1/P2Rp1P1/4P3/5PPK/8 b - - 16 56},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h7-g7}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 56, Black: \texttt{Kg8}.} (a) Our position; Melanie plays \texttt{Kg8} (\texttt{g7g8}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0001\#322} (ply 110) [structural distance $d$=41, QAP obj=6]: the master played \texttt{Kb2}; under $\mu$ our \emph{Kg2} plays the role of that game's \emph{Ka3}; cross-type roles: our \emph{b}a1 as their \emph{r}a1, our \emph{N}a6 as their \emph{P}c2; transferred move \texttt{g7g8} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0001\#744} (ply 97) [structural distance $d$=45, QAP obj=5]: the master played \texttt{Kg7}; under $\mu$ our \emph{Kg2} plays the role of that game's \emph{Kf1}; cross-type roles: our \emph{b}a1 as their \emph{r}c8, our \emph{n}b5 as their \emph{b}b5; transferred move \texttt{g7g8} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0002\#1401} (ply 111) [structural distance $d$=40, QAP obj=5]: the master played \texttt{Kg7}; under $\mu$ our \emph{Kg2} plays the role of that game's \emph{Kh2}; cross-type roles: our \emph{n}b5 as their \emph{r}d4, our \emph{N}a6 as their \emph{p}g4; transferred move \texttt{g7g8} \textbf{(endorses this move)}. Synthesis: 7 retrieved analogs transferred to \texttt{Kg8} (summed QAP objective 36, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m111}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={6k1/4p3/npr4p/pN4p1/P1p5/2P2PK1/1B1R4/8 b - - 3 57},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g8-g7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/5p1k/1p2r2p/6p1/P2Rp1P1/4P3/5PPK/8 b - - 16 56},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h7-g7}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/1p1n1k2/p1pr3p/5R2/2P5/2B2P1P/1P3K2/8 b - - 6 53},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f7-g6}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/p2k1p2/1p2p1p1/1P2P3/P3R2P/8/1KP4P/5r2 w - - 11 57},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={b2-c3}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 57, Black: \texttt{Kg7}.} (a) Our position; Melanie plays \texttt{Kg7} (\texttt{g8g7}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0002\#1401} (ply 111) [structural distance $d$=41, QAP obj=4]: the master played \texttt{Kg7}; under $\mu$ our \emph{Kg1} plays the role of that game's \emph{Kh2}; cross-type roles: our \emph{n}b5 as their \emph{P}f7, our \emph{b}b2 as their \emph{p}f2; transferred move \texttt{g8g7} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0001\#1272} (ply 105) [structural distance $d$=43, QAP obj=4]: the master played \texttt{Kg6}; under $\mu$ our \emph{Kg1} plays the role of that game's \emph{Kf2}; cross-type roles: our \emph{b}b2 as their \emph{N}d7, our \emph{P}g5 as their \emph{r}f5; transferred move \texttt{g8g7} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0001\#322} (ply 112) [structural distance $d$=43, QAP obj=4]: the master played \texttt{Kc3}; under $\mu$ our \emph{Kg1} plays the role of that game's \emph{Kb2}; cross-type roles: our \emph{N}a6 as their \emph{r}f1, our \emph{n}b5 as their \emph{P}h2; transferred move \texttt{g8g7} \textbf{(endorses this move)}. Synthesis: 12 retrieved analogs transferred to \texttt{Kg7} (summed QAP objective 39, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m113}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/4p1k1/npr4p/pN4p1/P1p2P2/2P3K1/1B1R4/8 b - - 0 58},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g7-g8}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/p1r2k2/R1P2p2/5p1p/P3pP1P/6P1/5K2/8 w - - 9 51},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f2-e2}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/3k4/2n2p2/1r1p1Np1/p2P2P1/P7/1PR2P2/4K3 w - - 20 53},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e1-f1}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/5p1k/1p2r2p/6p1/P2Rp1P1/4P3/5PPK/8 b - - 16 56},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h7-g7}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 58, Black: \texttt{Kg8}.} (a) Our position; Melanie plays \texttt{Kg8} (\texttt{g7g8}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0000\#3080} (ply 100) [structural distance $d$=48, QAP obj=29]: the master played \texttt{Ke2}; under $\mu$ our \emph{Kg2} plays the role of that game's \emph{Kf2}; cross-type roles: our \emph{b}b2 as their \emph{p}e4, our \emph{n}b5 as their \emph{P}f4; transferred move \texttt{g7g8} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0002\#3150} (ply 104) [structural distance $d$=33, QAP obj=23]: the master played \texttt{Kf1}; under $\mu$ our \emph{Kg2} plays the role of that game's \emph{Ke1}; cross-type roles: our \emph{P}g5 as their \emph{R}c2, our \emph{b}b2 as their \emph{p}d5; transferred move \texttt{g7g8} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0002\#1401} (ply 111) [structural distance $d$=46, QAP obj=21]: the master played \texttt{Kg7}; under $\mu$ our \emph{Kg2} plays the role of that game's \emph{Kh2}; cross-type roles: our \emph{r}d2 as their \emph{P}f7, our \emph{b}b2 as their \emph{R}e6; transferred move \texttt{g7g8} \textbf{(endorses this move)}. Synthesis: 5 retrieved analogs transferred to \texttt{Kg8} (summed QAP objective 99, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m115}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={6k1/4p3/npr4p/pN4P1/P1p5/2P3K1/1B1R4/8 b - - 0 59},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h6-g5}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/r4p1k/1p2PPp1/1P6/4Nb2/5PpP/8/1R3K2 b - - 0 63},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f7-e6}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={4kb2/1p6/pP5p/P1P2R2/r5p1/3N4/7P/7K w - - 9 51},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f5-e5}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/p1r3k1/R1P2p2/5p1p/P3pP1P/6P1/4K3/8 w - - 11 52},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={a6-a5}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 59, Black: \texttt{hxg5}.} (a) Our position; Melanie plays \texttt{hxg5} (\texttt{h6g5}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0000\#1804} (ply 125) [structural distance $d$=39, QAP obj=40]: the master played \texttt{fxe6}; under $\mu$ our \emph{Ph3} plays the role of that game's \emph{Pf2}; cross-type roles: our \emph{b}b2 as their \emph{p}f6, our \emph{N}a6 as their \emph{P}g6; transferred move \texttt{h6g5} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0001\#3538} (ply 100) [structural distance $d$=42, QAP obj=30]: the master played \texttt{Re5+}; under $\mu$ our \emph{Ph3} plays the role of that game's \emph{Rf5} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{R}c6 as their \emph{N}d3, our \emph{P}h6 as their \emph{r}a4; transferred move \texttt{h6g5} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0000\#3080} (ply 102) [structural distance $d$=41, QAP obj=29]: the master played \texttt{Ra5}; under $\mu$ our \emph{Ph3} plays the role of that game's \emph{Ra6} (a \textbf{cross-type} correspondence); cross-type roles: our \emph{b}b2 as their \emph{p}e4, our \emph{n}b5 as their \emph{P}f4; transferred move \texttt{h6g5} \textbf{(endorses this move)}. Synthesis: 10 retrieved analogs transferred to \texttt{hxg5} (summed QAP objective 197, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m117}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={6k1/4p3/npr5/pN4p1/P1p5/2P3K1/3R4/B7 b - - 1 60},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g8-h7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={R2k4/2p5/5rp1/2N1p2p/1Pb1P2P/6P1/1K6/8 b - - 15 68},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d8-e7}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/6k1/2n3p1/6Pp/2N1R2P/1p4K1/1P6/3r4 w - - 9 54},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g3-f2}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={6r1/1p1k4/4p3/p3P1n1/6PN/1P1pK3/1P6/6R1 w - - 3 59},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e3-d3}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 60, Black: \texttt{Kh7}.} (a) Our position; Melanie plays \texttt{Kh7} (\texttt{g8h7}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0003\#2162} (ply 135) [structural distance $d$=32, QAP obj=3]: the master played \texttt{Ke7}; under $\mu$ our \emph{Kg1} plays the role of that game's \emph{Kd1}; cross-type roles: our \emph{P}e7 as their \emph{r}a8, our \emph{N}a6 as their \emph{P}c7; transferred move \texttt{g8h7} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0002\#3063} (ply 106) [structural distance $d$=35, QAP obj=3]: the master played \texttt{Kf2}; under $\mu$ our \emph{Kg1} plays the role of that game's \emph{Kg3}; cross-type roles: our \emph{P}e7 as their \emph{n}c6; transferred move \texttt{g8h7} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0002\#3338} (ply 116) [structural distance $d$=33, QAP obj=3]: the master played \texttt{Kxd3}; under $\mu$ our \emph{Kg1} plays the role of that game's \emph{Ke3}; cross-type roles: our \emph{b}a1 as their \emph{R}g1, our \emph{R}c6 as their \emph{P}b2; transferred move \texttt{g8h7} \textbf{(endorses this move)}. Synthesis: 8 retrieved analogs transferred to \texttt{Kh7} (summed QAP objective 20, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m119}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/4p2k/npr5/pN4p1/P1p5/2P3K1/1B1R4/8 b - - 3 61},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h7-g7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={R7/6k1/2r1bpp1/7p/4P2P/B4P2/6P1/6K1 w - - 62 69},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g1-h2}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/6k1/2n3p1/6Pp/2N1R2P/1p6/1P3K2/7r w - - 11 55},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f2-g3}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={R2k4/2p5/5rp1/2N1p2p/1Pb1P2P/6P1/1K6/8 b - - 15 68},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d8-e7}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 61, Black: \texttt{Kg7}.} (a) Our position; Melanie plays \texttt{Kg7} (\texttt{h7g7}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0003\#2415} (ply 136) [structural distance $d$=37, QAP obj=5]: the master played \texttt{Kh2}; under $\mu$ our \emph{Kh2} plays the role of that game's \emph{Kg1}; cross-type roles: our \emph{P}e7 as their \emph{B}a3, our \emph{R}c6 as their \emph{P}e4; transferred move \texttt{h7g7} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0002\#3063} (ply 108) [structural distance $d$=36, QAP obj=4]: the master played \texttt{Kg3}; under $\mu$ our \emph{Kh2} plays the role of that game's \emph{Kf2}; cross-type roles: our \emph{N}a6 as their \emph{r}h1, our \emph{b}b2 as their \emph{N}c4; transferred move \texttt{h7g7} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0003\#2162} (ply 135) [structural distance $d$=36, QAP obj=4]: the master played \texttt{Ke7}; under $\mu$ our \emph{Kh2} plays the role of that game's \emph{Kd1}; cross-type roles: our \emph{b}b2 as their \emph{r}a8, our \emph{N}a6 as their \emph{P}e5; transferred move \texttt{h7g7} \textbf{(endorses this move)}. Synthesis: 15 retrieved analogs transferred to \texttt{Kg7} (summed QAP objective 48, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m121}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/4p1k1/npr5/pN4p1/P1p5/2P3K1/3R4/B7 b - - 5 62},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g7-h7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={R2k4/2p5/5rp1/2N1p2p/1Pb1P2P/6P1/1K6/8 b - - 15 68},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d8-e7}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/6k1/2n3p1/6Pp/2N1R2P/1p4K1/1P6/3r4 w - - 9 54},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g3-f2}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={6r1/1p1k4/4p3/p3P1n1/6PN/1P1pK3/1P6/6R1 w - - 3 59},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={e3-d3}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 62, Black: \texttt{Kh7}.} (a) Our position; Melanie plays \texttt{Kh7} (\texttt{g7h7}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0003\#2162} (ply 135) [structural distance $d$=32, QAP obj=3]: the master played \texttt{Ke7}; under $\mu$ our \emph{Kg2} plays the role of that game's \emph{Kd1}; cross-type roles: our \emph{P}e7 as their \emph{r}a8, our \emph{N}a6 as their \emph{P}c7; transferred move \texttt{g7h7} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0002\#3063} (ply 106) [structural distance $d$=35, QAP obj=3]: the master played \texttt{Kf2}; under $\mu$ our \emph{Kg2} plays the role of that game's \emph{Kg3}; cross-type roles: our \emph{P}b6 as their \emph{N}c4, our \emph{b}a1 as their \emph{p}h5; transferred move \texttt{g7h7} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0002\#3338} (ply 116) [structural distance $d$=34, QAP obj=3]: the master played \texttt{Kxd3}; under $\mu$ our \emph{Kg2} plays the role of that game's \emph{Ke3}; cross-type roles: our \emph{n}b5 as their \emph{R}g1, our \emph{b}a1 as their \emph{P}b2; transferred move \texttt{g7h7} \textbf{(endorses this move)}. Synthesis: 6 retrieved analogs transferred to \texttt{Kh7} (summed QAP objective 17, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m123}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[p]\centering
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/4p2k/npr5/pN4p1/P1p5/2P3K1/1B1R4/8 b - - 7 63},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={h7-g7}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={R7/6k1/2r1bpp1/7p/4P2P/B4P2/6P1/6K1 w - - 62 69},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={g1-h2}
+]}
+\caption{}
+\end{subfigure}
+\\[4pt]
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={8/6k1/2n3p1/6Pp/2N1R2P/1p6/1P3K2/7r w - - 11 55},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={f2-g3}
+]}
+\caption{}
+\end{subfigure}\hfill
+\begin{subfigure}{0.46\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\newchessgame
+\chessboard[
+  setfen={R2k4/2p5/5rp1/2N1p2p/1Pb1P2P/6P1/1K6/8 b - - 15 68},
+  showmover=false,
+  pgfstyle=straightmove, color=movearrow, markmove={d8-e7}
+]}
+\caption{}
+\end{subfigure}
+\caption{\textbf{Move 63, Black: \texttt{Kg7}.} (a) Our position; Melanie plays \texttt{Kg7} (\texttt{h7g7}). Panels (b)--(d) are the retrieved master positions whose correspondence most drove this move (highest QAP objective among those that transfer to it). (b) Retrieved from \texttt{ccrl\_top\_p0003\#2415} (ply 136) [structural distance $d$=37, QAP obj=5]: the master played \texttt{Kh2}; under $\mu$ our \emph{Kh2} plays the role of that game's \emph{Kg1}; cross-type roles: our \emph{P}e7 as their \emph{B}a3, our \emph{R}c6 as their \emph{P}e4; transferred move \texttt{h7g7} \textbf{(endorses this move)}. (c) Retrieved from \texttt{ccrl\_top\_p0002\#3063} (ply 108) [structural distance $d$=36, QAP obj=4]: the master played \texttt{Kg3}; under $\mu$ our \emph{Kh2} plays the role of that game's \emph{Kf2}; cross-type roles: our \emph{N}a6 as their \emph{r}h1, our \emph{b}b2 as their \emph{N}c4; transferred move \texttt{h7g7} \textbf{(endorses this move)}. (d) Retrieved from \texttt{ccrl\_top\_p0003\#2162} (ply 135) [structural distance $d$=36, QAP obj=4]: the master played \texttt{Ke7}; under $\mu$ our \emph{Kh2} plays the role of that game's \emph{Kd1}; cross-type roles: our \emph{b}b2 as their \emph{r}a8, our \emph{N}a6 as their \emph{P}e5; transferred move \texttt{h7g7} \textbf{(endorses this move)}. Synthesis: 11 retrieved analogs transferred to \texttt{Kg7} (summed QAP objective 37, the strongest correspondence among the candidate moves); Melanie committed it via the \texttt{search} selector.}
+\label{fig:thought-m125}
+\end{figure}
+
+\end{document}
