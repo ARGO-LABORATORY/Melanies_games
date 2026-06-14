@@ -7,7 +7,7 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 
 ## Score (run `xray_ablation_bots_20260613_232536`)
 
-**BASE 5 — 3 XRAY**  (draws: 5, games: 13)
+**BASE 5 — 3 XRAY**  (draws: 6, games: 14)
 
 ## Results by opening (cell = winner, or "draw")
 
@@ -19,4 +19,4 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 | Catalan | XRAY | BASE | +32 |
 | Dutch, Stonewall | draw | BASE | +53 |
 | English, Symmetrical | XRAY | BASE | +40 |
-| French, Classical | draw | — | +38 |
+| French, Classical | draw | draw | +38 |
