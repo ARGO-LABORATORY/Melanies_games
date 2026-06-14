@@ -7,7 +7,7 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 
 ## Score (run `xray_ablation_bots_20260613_232536`)
 
-**BASE 2 — 2 XRAY**  (draws: 3, games: 7)
+**BASE 3 — 2 XRAY**  (draws: 3, games: 8)
 
 ## Results by opening (cell = winner, or "draw")
 
@@ -16,4 +16,4 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 | Alekhine Defense | draw | BASE | +87 |
 | Bogo-Indian | draw | XRAY | +52 |
 | Caro-Kann, Panov | BASE | draw | +37 |
-| Catalan | XRAY | — | +32 |
+| Catalan | XRAY | BASE | +32 |
