@@ -7,10 +7,10 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 
 ## Score (run `analogy_vs_search_20260615_202149`)
 
-**ANALOGY 1 — 0 SEARCH**  (draws: 0, games: 1)
+**ANALOGY 1 — 0 SEARCH**  (draws: 1, games: 2)
 
 ## Results by opening (cell = winner, or "draw")
 
 | Opening | ANALOGY as White | SEARCH as White | Eval@book |
 |---|---|---|---|
-| Alekhine Defense | ANALOGY | — | +87 |
+| Alekhine Defense | ANALOGY | draw | +87 |
