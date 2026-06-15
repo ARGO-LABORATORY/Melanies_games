@@ -7,7 +7,7 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 
 ## Score (run `analogy_vs_search_20260615_202149`)
 
-**ANALOGY 6 — 4 SEARCH**  (draws: 3, games: 13)
+**ANALOGY 6 — 5 SEARCH**  (draws: 3, games: 14)
 
 ## Results by opening (cell = winner, or "draw")
 
@@ -19,4 +19,4 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 | Catalan | draw | SEARCH | +32 |
 | Dutch, Stonewall | SEARCH | ANALOGY | +53 |
 | English, Symmetrical | ANALOGY | draw | +40 |
-| French, Classical | ANALOGY | — | +38 |
+| French, Classical | ANALOGY | SEARCH | +38 |
