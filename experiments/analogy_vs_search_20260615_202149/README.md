@@ -7,7 +7,7 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 
 ## Score (run `analogy_vs_search_20260615_202149`)
 
-**ANALOGY 11 — 9 SEARCH**  (draws: 11, games: 31)
+**ANALOGY 11 — 9 SEARCH**  (draws: 12, games: 32)
 
 ## Results by opening (cell = winner, or "draw")
 
@@ -28,4 +28,4 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 | QGD, Exchange | ANALOGY | draw | +36 |
 | Queen's Gambit Accepted | draw | draw | +32 |
 | Reti Opening | draw | ANALOGY | +27 |
-| Ruy Lopez, Closed | ANALOGY | — | +38 |
+| Ruy Lopez, Closed | ANALOGY | draw | +38 |
