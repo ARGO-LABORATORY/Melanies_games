@@ -7,7 +7,7 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 
 ## Score (run `analogy_vs_search_20260615_202149`)
 
-**ANALOGY 9 — 9 SEARCH**  (draws: 7, games: 25)
+**ANALOGY 9 — 9 SEARCH**  (draws: 8, games: 26)
 
 ## Results by opening (cell = winner, or "draw")
 
@@ -25,4 +25,4 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 | King's Indian, Classical | draw | draw | +61 |
 | London System | SEARCH | draw | +8 |
 | Nimzo-Indian | draw | SEARCH | +25 |
-| QGD, Exchange | ANALOGY | — | +36 |
+| QGD, Exchange | ANALOGY | draw | +36 |
