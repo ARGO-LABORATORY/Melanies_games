@@ -7,7 +7,7 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 
 ## Score (run `analogy_vs_search_20260615_202149`)
 
-**ANALOGY 8 — 8 SEARCH**  (draws: 5, games: 21)
+**ANALOGY 8 — 8 SEARCH**  (draws: 6, games: 22)
 
 ## Results by opening (cell = winner, or "draw")
 
@@ -23,4 +23,4 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 | French, Tarrasch | SEARCH | SEARCH | +46 |
 | Grunfeld | ANALOGY | ANALOGY | +32 |
 | King's Indian, Classical | draw | draw | +61 |
-| London System | SEARCH | — | +8 |
+| London System | SEARCH | draw | +8 |
