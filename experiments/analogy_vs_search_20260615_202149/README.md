@@ -7,7 +7,7 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 
 ## Score (run `analogy_vs_search_20260615_202149`)
 
-**ANALOGY 9 — 9 SEARCH**  (draws: 9, games: 27)
+**ANALOGY 9 — 9 SEARCH**  (draws: 10, games: 28)
 
 ## Results by opening (cell = winner, or "draw")
 
@@ -26,4 +26,4 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 | London System | SEARCH | draw | +8 |
 | Nimzo-Indian | draw | SEARCH | +25 |
 | QGD, Exchange | ANALOGY | draw | +36 |
-| Queen's Gambit Accepted | draw | — | +32 |
+| Queen's Gambit Accepted | draw | draw | +32 |
