@@ -1,13 +1,13 @@
 # Experiment: ANALOGY vs SEARCH (decorrelated book openings)
 
-Head-to-head between two Melanie variants over **12 balanced opening positions**
+Head-to-head between two Melanie variants over **13 balanced opening positions**
 (`openings_book.json`), **each played both colors**. `R_QAP=64` on both sides; analogy takes
 over right after the book. Each game folder has `game.pgn` + both per-side report PDFs + reproducible
 `thoughts/`. A Stockfish move-quality verdict (per-side ACPL) is appended after the match.
 
 ## Score (run `analogy_vs_search_20260615_202149`)
 
-**ANALOGY 8 — 9 SEARCH**  (draws: 7, games: 24)
+**ANALOGY 9 — 9 SEARCH**  (draws: 7, games: 25)
 
 ## Results by opening (cell = winner, or "draw")
 
@@ -25,3 +25,4 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 | King's Indian, Classical | draw | draw | +61 |
 | London System | SEARCH | draw | +8 |
 | Nimzo-Indian | draw | SEARCH | +25 |
+| QGD, Exchange | ANALOGY | — | +36 |
