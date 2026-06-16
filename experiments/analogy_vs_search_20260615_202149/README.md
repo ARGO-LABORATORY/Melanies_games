@@ -1,13 +1,13 @@
 # Experiment: ANALOGY vs SEARCH (decorrelated book openings)
 
-Head-to-head between two Melanie variants over **16 balanced opening positions**
+Head-to-head between two Melanie variants over **17 balanced opening positions**
 (`openings_book.json`), **each played both colors**. `R_QAP=64` on both sides; analogy takes
 over right after the book. Each game folder has `game.pgn` + both per-side report PDFs + reproducible
 `thoughts/`. A Stockfish move-quality verdict (per-side ACPL) is appended after the match.
 
 ## Score (run `analogy_vs_search_20260615_202149`)
 
-**ANALOGY 11 — 9 SEARCH**  (draws: 12, games: 32)
+**ANALOGY 12 — 9 SEARCH**  (draws: 12, games: 33)
 
 ## Results by opening (cell = winner, or "draw")
 
@@ -29,3 +29,4 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 | Queen's Gambit Accepted | draw | draw | +32 |
 | Reti Opening | draw | ANALOGY | +27 |
 | Ruy Lopez, Closed | ANALOGY | draw | +38 |
+| Scotch Game | ANALOGY | — | +0 |
