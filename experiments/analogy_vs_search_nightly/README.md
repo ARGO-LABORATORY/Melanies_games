@@ -7,7 +7,7 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 
 ## Score (run `analogy_vs_search_nightly`)
 
-**ANALOGY 17 — 23 SEARCH**  (draws: 17, games: 57)
+**ANALOGY 17 — 23 SEARCH**  (draws: 18, games: 58)
 
 ## Results by opening (cell = winner, or "draw")
 
@@ -41,4 +41,4 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 | Nimzo-Indian | draw | SEARCH | +25 |
 | Petroff Defense | draw | draw | +52 |
 | Pirc Defense | draw | SEARCH | +62 |
-| QGD, Exchange | ANALOGY | — | +36 |
+| QGD, Exchange | ANALOGY | draw | +36 |
