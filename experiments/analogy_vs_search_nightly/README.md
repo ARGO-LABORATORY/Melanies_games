@@ -7,7 +7,7 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 
 ## Score (run `analogy_vs_search_nightly`)
 
-**ANALOGY 1 — 2 SEARCH**  (draws: 2, games: 5)
+**ANALOGY 2 — 2 SEARCH**  (draws: 2, games: 6)
 
 ## Results by opening (cell = winner, or "draw")
 
@@ -15,4 +15,4 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 |---|---|---|---|
 | Alekhine Defense | ANALOGY | draw | +87 |
 | Benko Gambit | SEARCH | SEARCH | +83 |
-| Bogo-Indian | draw | — | +52 |
+| Bogo-Indian | draw | ANALOGY | +52 |
