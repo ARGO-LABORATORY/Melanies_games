@@ -7,7 +7,7 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 
 ## Score (run `analogy_vs_search_nightly`)
 
-**ANALOGY 3 — 3 SEARCH**  (draws: 3, games: 9)
+**ANALOGY 3 — 4 SEARCH**  (draws: 3, games: 10)
 
 ## Results by opening (cell = winner, or "draw")
 
@@ -17,4 +17,4 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 | Benko Gambit | SEARCH | SEARCH | +83 |
 | Bogo-Indian | draw | ANALOGY | +52 |
 | Caro-Kann, Advance | SEARCH | draw | +18 |
-| Caro-Kann, Classical | ANALOGY | — | +41 |
+| Caro-Kann, Classical | ANALOGY | SEARCH | +41 |
