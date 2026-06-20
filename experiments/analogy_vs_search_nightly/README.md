@@ -7,7 +7,7 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 
 ## Score (run `analogy_vs_search_nightly`)
 
-**ANALOGY 6 — 5 SEARCH**  (draws: 4, games: 15)
+**ANALOGY 6 — 6 SEARCH**  (draws: 4, games: 16)
 
 ## Results by opening (cell = winner, or "draw")
 
@@ -20,4 +20,4 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 | Caro-Kann, Classical | ANALOGY | SEARCH | +41 |
 | Caro-Kann, Panov | ANALOGY | SEARCH | +37 |
 | Caro-Kann, Two Knights | ANALOGY | ANALOGY | +26 |
-| Catalan | draw | — | +32 |
+| Catalan | draw | SEARCH | +32 |
