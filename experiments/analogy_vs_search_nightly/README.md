@@ -7,7 +7,7 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 
 ## Score (run `analogy_vs_search_nightly`)
 
-**ANALOGY 15 — 20 SEARCH**  (draws: 12, games: 47)
+**ANALOGY 15 — 20 SEARCH**  (draws: 13, games: 48)
 
 ## Results by opening (cell = winner, or "draw")
 
@@ -36,4 +36,4 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 | King's Indian Attack | ANALOGY | SEARCH | +3 |
 | King's Indian, Classical | draw | ANALOGY | +61 |
 | King's Indian, Fianchetto | SEARCH | ANALOGY | +59 |
-| London System | SEARCH | — | +8 |
+| London System | SEARCH | draw | +8 |
