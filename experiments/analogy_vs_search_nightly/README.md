@@ -7,7 +7,7 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 
 ## Score (run `analogy_vs_search_nightly`)
 
-**ANALOGY 17 — 23 SEARCH**  (draws: 21, games: 61)
+**ANALOGY 17 — 23 SEARCH**  (draws: 22, games: 62)
 
 ## Results by opening (cell = winner, or "draw")
 
@@ -43,4 +43,4 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 | Pirc Defense | draw | SEARCH | +62 |
 | QGD, Exchange | ANALOGY | draw | +36 |
 | QGD, Orthodox | draw | draw | +19 |
-| Queen's Gambit Accepted | draw | — | +32 |
+| Queen's Gambit Accepted | draw | draw | +32 |
