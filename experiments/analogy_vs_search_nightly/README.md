@@ -7,7 +7,7 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 
 ## Score (run `analogy_vs_search_nightly`)
 
-**ANALOGY 17 — 23 SEARCH**  (draws: 19, games: 59)
+**ANALOGY 17 — 23 SEARCH**  (draws: 20, games: 60)
 
 ## Results by opening (cell = winner, or "draw")
 
@@ -42,4 +42,4 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 | Petroff Defense | draw | draw | +52 |
 | Pirc Defense | draw | SEARCH | +62 |
 | QGD, Exchange | ANALOGY | draw | +36 |
-| QGD, Orthodox | draw | — | +19 |
+| QGD, Orthodox | draw | draw | +19 |
