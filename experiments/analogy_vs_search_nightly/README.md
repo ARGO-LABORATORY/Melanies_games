@@ -7,7 +7,7 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 
 ## Score (run `analogy_vs_search_nightly`)
 
-**ANALOGY 9 — 17 SEARCH**  (draws: 11, games: 37)
+**ANALOGY 10 — 17 SEARCH**  (draws: 11, games: 38)
 
 ## Results by opening (cell = winner, or "draw")
 
@@ -31,4 +31,4 @@ over right after the book. Each game folder has `game.pgn` + both per-side repor
 | French, Rubinstein | draw | SEARCH | +53 |
 | French, Tarrasch | SEARCH | SEARCH | +46 |
 | French, Winawer | SEARCH | draw | +69 |
-| Grunfeld | ANALOGY | — | +32 |
+| Grunfeld | ANALOGY | ANALOGY | +32 |
